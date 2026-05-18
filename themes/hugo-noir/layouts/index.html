@@ -2,21 +2,21 @@
 <head>
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 </head>
-<div class="w-full md:w-4/5 lg:w-3/5 mx-auto px-14 py-12">
+<div class="w-full md:w-4/5 lg:w-3/5 mx-auto px-4 sm:px-8 md:px-14 py-8 sm:py-12">
     <!-- Hero Section -->
     {{ $authorData := index site.Data .Language.Lang "author" }}
     {{ $author := cond (and $authorData $authorData.author) $authorData.author site.Params }}
     
     {{ with $author }}
     <section class="mb-16">
-        <div class="max-w-3xl ml-0 p-4 pb-2 border border-border-primary-light dark:border-border-primary-dark rounded-lg bg-bg-secondary-light dark:bg-bg-secondary-dark shadow-lg relative">
-            <div class="text-left">
-                <h1 class="text-4xl font-bold mb-2 text-text-primary-light dark:text-text-primary-dark">{{ .name }}</h1>
-                <p class="text-gray-400 mb-3 flex items-center text-xl">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-400" width="24" height="24" viewBox="-7 -2 24 24"><path fill="currentColor" d="M4 9.9A5.002 5.002 0 0 1 5 0a5 5 0 0 1 1 9.9V19a1 1 0 0 1-2 0V9.9zM5 8a3 3 0 1 0 0-6a3 3 0 0 0 0 6z"/></svg>
+        <div class="max-w-3xl ml-0 p-4 sm:p-5 pb-2 border border-border-primary-light dark:border-border-primary-dark rounded-lg bg-bg-secondary-light dark:bg-bg-secondary-dark shadow-lg relative min-w-0">
+            <div class="text-left min-w-0 md:pe-44">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 break-words text-text-primary-light dark:text-text-primary-dark">{{ .name }}</h1>
+                <p class="text-gray-400 mb-3 flex items-center gap-2 text-base sm:text-lg md:text-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-400 shrink-0" width="24" height="24" viewBox="-7 -2 24 24"><path fill="currentColor" d="M4 9.9A5.002 5.002 0 0 1 5 0a5 5 0 0 1 1 9.9V19a1 1 0 0 1-2 0V9.9zM5 8a3 3 0 1 0 0-6a3 3 0 0 0 0 6z"/></svg>
                     {{ .location }}
                 </p>
-                <p class="text-xl mb-6 text-text-primary-light dark:text-text-primary-dark">{{ .description }}</p>
+                <p class="text-base sm:text-lg md:text-xl mb-6 text-text-primary-light dark:text-text-primary-dark">{{ .description }}</p>
             </div>
             <!-- Social Icons - Moved to bottom for mobile -->
             <div class="mt-8 md:mt-0 flex flex-wrap justify-center gap-3 md:absolute md:top-4 md:end-4 md:flex-nowrap md:justify-end md:mt-0">
@@ -51,7 +51,7 @@
     <!-- Tech Stack -->
     {{ with (index site.Data .Language.Lang "tech") }}
         <section class="mb-20">
-            <h2 class="text-4xl font-bold mb-2 relative">{{ T "whatIWorkWith" }}</h2>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 relative">{{ T "whatIWorkWith" }}</h2>
             <div class="tech-carousel">
                 <div class="carousel-container">
                     <div class="carousel-track carousel-track-left-to-right">
@@ -100,7 +100,7 @@
 
     {{ with $experience }}
     <section>
-        <h2 class="text-4xl font-bold mb-5">{{ T "experienceTitle" }}</h2>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-5">{{ T "experienceTitle" }}</h2>
         <div class="space-y-4 max-w-3xl mx-auto">
             {{ range $index, $exp := . }}
             <div class="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-0 before:w-[2px] before:h-full before:bg-gray-700 before:rounded-full">
@@ -139,7 +139,7 @@
     
     {{ with $voluntary }}
     <section class="mt-20">
-        <h2 class="text-4xl font-bold mb-5">{{ T "voluntaryTitle" }}</h2>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-5">{{ T "voluntaryTitle" }}</h2>
         <div class="space-y-4 max-w-3xl mx-auto">
             {{ range $index, $vol := . }}
             <div class="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-0 before:w-[2px] before:h-full before:bg-gray-700 before:rounded-full">
@@ -269,7 +269,7 @@
     {{ with $blogs }}
     <section class="mt-20 mb-20">
         <div class="flex justify-between items-center mb-8">
-            <h2 class="text-4xl font-bold">{{ T "blogsTitle" }}</h2>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">{{ T "blogsTitle" }}</h2>
         </div>
         <div class="space-y-8 max-w-3xl mx-auto">
             {{ range first 3 . }}

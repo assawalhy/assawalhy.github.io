@@ -1,10 +1,10 @@
 {{ define "main" }}
 <div class="max-w-4xl mx-auto px-4 py-12">
-    <h1 class="text-5xl font-bold mb-6 text-text-primary-light dark:text-text-primary-dark">{{ .Title }}</h1>
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 break-words text-text-primary-light dark:text-text-primary-dark">{{ .Title }}</h1>
 
     <div class="flex flex-col gap-8">
         <div class="flex-grow">
-            <div class="bg-bg-primary-light dark:bg-bg-secondary-dark p-8 rounded-lg mb-8 border border-border-primary-light dark:border-border-primary-dark">
+            <div class="bg-bg-primary-light dark:bg-bg-secondary-dark p-4 sm:p-6 md:p-8 rounded-lg mb-8 border border-border-primary-light dark:border-border-primary-dark min-w-0">
                 <div class="prose prose-invert prose-xl max-w-none">
                     <div>
                         {{ .Content }}
