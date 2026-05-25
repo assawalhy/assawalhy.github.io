@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    background-color: #121212;
-    color: #ffffff;
-}
 
 .tech-icon {
     filter: grayscale(100%) brightness(200%);
