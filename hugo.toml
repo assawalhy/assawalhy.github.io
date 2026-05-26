@@ -62,6 +62,8 @@ defaultContentLanguageInSubdir = true
   github_username = "muhammadSawalhy"
   linkedin = "https://linkedin.com/in/muhammadsawalhy"
   linkedin_username = "muhammadsawalhy"
+  twitter = "https://x.com/assawalhy"
+  twitter_username = "assawalhy"
 
   [[params.honors]]
     institution = "ACPC Competition"
