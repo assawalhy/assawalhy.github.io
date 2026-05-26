@@ -17,25 +17,17 @@ defaultContentLanguageInSubdir = true
     contentDir = "content/en"
     [languages.en.menu]
       [[languages.en.menu.main]]
-        name = "About"
-        pageRef = "/about"
-        weight = 1
-      [[languages.en.menu.main]]
-        name = "Experience"
-        pageRef = "/experience"
-        weight = 2
-      [[languages.en.menu.main]]
         name = "Projects"
         pageRef = "/projects"
-        weight = 3
+        weight = 1
       [[languages.en.menu.main]]
         name = "Blog"
         pageRef = "/blogs"
-        weight = 4
+        weight = 2
       [[languages.en.menu.main]]
         name = "Contact"
         pageRef = "/contact"
-        weight = 5
+        weight = 3
 
   [languages.ar]
     languageName = "العربية"
@@ -45,25 +37,17 @@ defaultContentLanguageInSubdir = true
     contentDir = "content/ar"
     [languages.ar.menu]
       [[languages.ar.menu.main]]
-        name = "عني"
-        pageRef = "/about"
-        weight = 1
-      [[languages.ar.menu.main]]
-        name = "الخبرات"
-        pageRef = "/experience"
-        weight = 2
-      [[languages.ar.menu.main]]
         name = "المشاريع"
         pageRef = "/projects"
-        weight = 3
+        weight = 1
       [[languages.ar.menu.main]]
         name = "المدونة"
         pageRef = "/blogs"
-        weight = 4
+        weight = 2
       [[languages.ar.menu.main]]
         name = "تواصل"
         pageRef = "/contact"
-        weight = 5
+        weight = 3
 
 [taxonomies]
   category = "categories"
