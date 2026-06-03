@@ -1,0 +1,3 @@
+## Run the local dev server
+
+User `make` command to run the local dev server which should tell the server to use the localhost link as the base URL.
