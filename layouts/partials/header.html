@@ -1,14 +1,17 @@
 {{ $currentPage := . }}
 <head>
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <style>
         body {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Work Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .font-display {
+            font-family: 'Sora', sans-serif;
         }
         .language-switcher {
             position: relative;
@@ -58,7 +61,7 @@
                 {{ $author := cond (and $authorData $authorData.author) $authorData.author site.Params }}
                 {{ with $author }}
                 <a href="{{ absLangURL .Site.BaseURL }}" class="flex gap-2 items-center text-xl font-bold text-text-primary-light dark:text-text-primary-dark hover:text-accent-light dark:hover:text-accent-dark transition-colors duration-300">
-                    <img class="rounded-full" src="/favicon-32x32.png" alt="logo">
+                    <img class="rounded-full" src="/favicon-32x32.png" alt="" width="32" height="32">
                     {{ if .short_name }}{{ .short_name }}{{ else }}{{ .name }}{{ end }}
                 </a>
                 {{ end }}
