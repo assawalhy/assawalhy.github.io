@@ -3,9 +3,9 @@
   short_name = "Assawalhy"
   location = "Egypt"
   description = "Full Stack Software Engineer passionate about building web applications, competitive programming, and open source."
-  email = "muhammadSawalhy@gmail.com"
-  github = "https://github.com/muhammadSawalhy"
-  linkedin = "https://linkedin.com/in/muhammadsawalhy"
+  email = "muhammad.sawalhy@gmail.com"
+  github = "https://github.com/assawalhy"
+  linkedin = "https://linkedin.com/in/assawalhy"
 
 [[honors]]
   institution = "ACPC Competition"

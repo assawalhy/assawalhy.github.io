@@ -8,7 +8,7 @@ description: "تواصل مع محمد سمير الصوالحي."
 
 لا تتردد في التواصل معي عبر البريد الإلكتروني أو التواصل عبر وسائل التواصل الاجتماعي.
 
-- **البريد الإلكتروني:** [muhammadSawalhy@gmail.com](mailto:muhammadSawalhy@gmail.com)
-- **GitHub:** [muhammadSawalhy](https://github.com/muhammadSawalhy)
-- **LinkedIn:** [muhammadsawalhy](https://linkedin.com/in/muhammadsawalhy)
+- **البريد الإلكتروني:** [muhammad.sawalhy@gmail.com](mailto:muhammad.sawalhy@gmail.com)
+- **GitHub:** [assawalhy](https://github.com/assawalhy)
+- **LinkedIn:** [assawalhy](https://linkedin.com/in/assawalhy)
 - **الهاتف:** 201096390741+
