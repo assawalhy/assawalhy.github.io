@@ -21,13 +21,17 @@ defaultContentLanguageInSubdir = true
         pageRef = "/projects"
         weight = 1
       [[languages.en.menu.main]]
+        name = "Seminars"
+        pageRef = "/seminars"
+        weight = 2
+      [[languages.en.menu.main]]
         name = "Blog"
         pageRef = "/blogs"
-        weight = 2
+        weight = 3
       [[languages.en.menu.main]]
         name = "Contact"
         pageRef = "/contact"
-        weight = 3
+        weight = 4
 
   [languages.ar]
     languageName = "العربية"
@@ -41,13 +45,17 @@ defaultContentLanguageInSubdir = true
         pageRef = "/projects"
         weight = 1
       [[languages.ar.menu.main]]
+        name = "اللقاءات"
+        pageRef = "/seminars"
+        weight = 2
+      [[languages.ar.menu.main]]
         name = "المدونة"
         pageRef = "/blogs"
-        weight = 2
+        weight = 3
       [[languages.ar.menu.main]]
         name = "تواصل"
         pageRef = "/contact"
-        weight = 3
+        weight = 4
 
 [taxonomies]
   category = "categories"
