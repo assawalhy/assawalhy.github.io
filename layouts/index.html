@@ -220,13 +220,13 @@
     align-items: start;
     min-height: min(720px, calc(100vh - 7rem));
     padding-block: clamp(2rem, 7vw, 7rem);
-    overflow: visible;
+    overflow-x: clip;
   }
 
   .hero::before {
     content: "";
     position: absolute;
-    inset: -200px -200px;
+    inset: -200px 0;
     pointer-events: none;
     background: radial-gradient(ellipse 50% 45% at 25% 30%, rgba(2, 132, 199, 0.06), transparent 60%);
   }
