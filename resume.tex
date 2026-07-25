@@ -58,8 +58,8 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-7pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+  \vspace{-8pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \ifdefined\pdfgentounicode
@@ -75,11 +75,11 @@
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-3pt}\item
+  \vspace{-4pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-8pt}
+    \end{tabular*}\vspace{-9pt}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
@@ -145,6 +145,7 @@
         \resumeItem{Applied Clean Architecture, DDD, and CQRS to maintain code modularity and enable parallel work in an agile, fast-ship environment}
         \resumeItem{Achieved ~80\% unit test coverage and wrote integration tests using Testcontainers and MockK}
         \resumeItem{Gained working knowledge of CI/CD pipelines (ArgoCD), container orchestration (Kubernetes), and monitoring and observability (Datadog)}
+        \resumeItem{Leveraged feature flags to progressively roll out features and run A/B experiments}
       \resumeItemListEnd
 
     \resumeSubheading

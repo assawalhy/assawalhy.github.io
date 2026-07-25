@@ -10,9 +10,10 @@
     "Maintained backend systems built with Node.js and Spring Boot Kotlin, working across both SQL (PostgreSQL) and NoSQL (MongoDB) databases.",
     "Applied Clean Architecture, DDD, and CQRS to maintain code modularity and enable parallel work in an agile, fast-ship environment.",
     "Achieved ~80% unit test coverage and wrote integration tests using Testcontainers and MockK.",
-    "Gained working knowledge of CI/CD pipelines (ArgoCD), container orchestration (Kubernetes), and monitoring and observability (Datadog)."
+    "Gained working knowledge of CI/CD pipelines (ArgoCD), container orchestration (Kubernetes), and monitoring and observability (Datadog).",
+    "Leveraged feature flags to progressively roll out features and run A/B experiments."
   ]
-  technologies = ["TypeScript", "Node.js", "Kotlin", "Spring Boot", "Apache Pulsar", "PostgreSQL", "MongoDB", "Clean Architecture", "DDD", "CQRS", "Testcontainers", "MockK", "Docker", "Kubernetes", "ArgoCD", "Datadog"]
+  technologies = ["TypeScript", "Node.js", "Kotlin", "Spring Boot", "Apache Pulsar", "PostgreSQL", "MongoDB", "Clean Architecture", "DDD", "CQRS", "Testcontainers", "MockK", "Docker", "Kubernetes", "ArgoCD", "Datadog", "Feature Flags"]
 
 [[experience]]
   role = "Frontend Engineer"

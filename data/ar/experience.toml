@@ -10,9 +10,10 @@
     "صيانة أنظمة الواجهات الخلفية المبنية باستخدام Node.js وSpring Boot Kotlin، والعمل مع قواعد بيانات SQL (PostgreSQL) وNoSQL (MongoDB).",
     "تطبيق Clean Architecture وDDD وCQRS للحفاظ على نمطية الكود وتمكين العمل المتوازي في بيئة agile سريعة.",
     "تحقيق تغطية اختبارات ~80% وكتابة اختبارات تكامل باستخدام Testcontainers وMockK.",
-    "اكتساب معرفة عملية بأنابيب CI/CD (ArgoCD) وتنسيق الحاويات (Kubernetes) والمراقبة والرصد (Datadog)."
+    "اكتساب معرفة عملية بأنابيب CI/CD (ArgoCD) وتنسيق الحاويات (Kubernetes) والمراقبة والرصد (Datadog).",
+    "استخدام feature flags للنشر التدريجي للميزات وتشغيل تجارب A/B."
   ]
-  technologies = ["TypeScript", "Node.js", "Kotlin", "Spring Boot", "Apache Pulsar", "PostgreSQL", "MongoDB", "Clean Architecture", "DDD", "CQRS", "Testcontainers", "MockK", "Docker", "Kubernetes", "ArgoCD", "Datadog"]
+  technologies = ["TypeScript", "Node.js", "Kotlin", "Spring Boot", "Apache Pulsar", "PostgreSQL", "MongoDB", "Clean Architecture", "DDD", "CQRS", "Testcontainers", "MockK", "Docker", "Kubernetes", "ArgoCD", "Datadog", "Feature Flags"]
 
 [[experience]]
   role = "مهندس واجهات أمامية"
