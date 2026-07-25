@@ -250,9 +250,11 @@
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer" . }}
+{{ if eq hugo.Environment "development" }}
 <!-- impeccable-live-start -->
 <script src="http://localhost:8400/live.js"></script>
 <!-- impeccable-live-end -->
+{{ end }}
 </body>
 
 </html>

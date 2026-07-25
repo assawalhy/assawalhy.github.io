@@ -1,0 +1,241 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{lmodern}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\ifdefined\pdfglyphtounicode
+  \input{glyphtounicode}
+\fi
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-7pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\ifdefined\pdfgentounicode
+  \pdfgentounicode=1
+\fi
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-3pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-3pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-8pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-7pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\huge \scshape Muhammad Samir Assawalhy} \\ \vspace{1pt}
+    \small \faPhone\ +201096390741 \quad
+    \href{mailto:muhammadsawalhy@gmail.com}{\faEnvelope\ \underline{muhammadsawalhy@gmail.com}} \quad
+    \href{https://assawalhy.xyz}{\faGlobe\ \underline{assawalhy.xyz}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Zagazig University}{Zagazig, Egypt}
+      {Bachelor of Electrical Engineering - Computer and Systems Engineering track}{Sep 2019 -- Jul 2024}
+      \resumeItemListStart
+        \resumeItem{Achieved 1st place among university teams in the ECPC competitions for three consecutive years}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Backend Intern}{Jun 2026 -- Sep 2026}
+      {Taager}{Cairo, Egypt}
+      \resumeItemListStart
+        \resumeItem{Designed and maintained microservices communicating via Apache Pulsar}
+        \resumeItem{Maintained backend systems built with Node.js and Spring Boot Kotlin, working across both SQL (PostgreSQL) and NoSQL (MongoDB) databases}
+        \resumeItem{Applied Clean Architecture, DDD, and CQRS to maintain code modularity and enable parallel work in an agile, fast-ship environment}
+        \resumeItem{Achieved ~80\% unit test coverage and wrote integration tests using Testcontainers and MockK}
+        \resumeItem{Gained working knowledge of CI/CD pipelines (ArgoCD), container orchestration (Kubernetes), and monitoring and observability (Datadog)}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Frontend Engineer}{Aug 2023 -- Jun 2024}
+      {SciCave}{Cairo, Egypt}
+      \resumeItemListStart
+        \resumeItem{Built web apps using TypeScript, React.js, Next.js, Tailwind CSS, and other web technologies}
+        \resumeItem{Tested the frontend using Cypress and CI/CD pipelines to automate quality checks and testing}
+        \resumeItem{Managed deployment using Docker and cloud services like AWS EC2 machine}
+        \resumeItem{Designed UI/UX using Figma and collaborated on requirements gathering}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Arabi.js} $|$ \emph{JavaScript, PEG.js}}{Oct 2020 -- May 2021}
+          \resumeItemListStart
+            \resumeItem{JavaScript Arabization based on Babel.js parser}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Rasm} $|$ \emph{JavaScript, HTML, Sass, Pugjs, PEG.js, Webpack, Gulp, Jest}}{Feb 2020 -- Present}
+          \resumeItemListStart
+            \resumeItem{Graphing calculator to plot math functions, draw geometric shapes, and animate them}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Da7ee7 Bots} $|$ \emph{Python, Django, JavaScript, HTML, Bootstrap}}{Apr 2022 -- May 2023}
+          \resumeItemListStart
+            \resumeItem{Dashboard built with Django to automate sending messages to multiple Telegram bots}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+    \resumeSubHeadingListStart
+      \resumeSubheading
+        {ACPC Finalist}{2022, 2023, 2024}
+        {Qualified to the African and Arab Collegiate Programming Championship}{}
+      \resumeSubheading
+        {NASA Space Apps Challenge}{Nov 2023}
+        {My team Pyrogurarians got 3rd place and became a global nominee}{}
+      \resumeSubheading
+        {IEEEXtreme 17.0 Competition}{Oct 2023}
+        {My team was one of the top 15 teams out of 198 Egyptian teams}{}
+    \resumeSubHeadingListEnd
+
+
+%-----------EXTRACURRICULAR ACTIVITIES-----------
+\section{Extra-Curricular Activities}
+    \resumeSubHeadingListStart
+      \resumeSubheading
+        {Mentor and Instructor}{Mar 2022 -- Aug 2024}
+        {ICPC Community at Zagazig University}{}
+        \resumeItemListStart
+            \resumeItem{Mentored multiple teams in the community and managed to leverage their algorithms and problem-solving skills}
+            \resumeItem{Delivered weekly sessions, covering topics like greedy algorithms and C++ STL library}
+            \resumeItem{Authored problems to be used in local or regional ICPC contests and tested other problems written by colleagues}
+        \resumeItemListEnd
+      \resumeSubheading
+        {IT Committee Head}{Nov 2021 -- Jun 2023}
+        {ZagEng Team}{}
+        \resumeItemListStart
+            \resumeItem{Directed the committee to build 13+ Telegram bots that help students get their learning materials}
+            \resumeItem{Automated repeated tasks by building a dashboard using Django and integrating it with Make.com}
+        \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+
+    \begin{itemize}[leftmargin=0.15in, label={}]
+        \small{\item{
+        
+        \textbf{Languages}{: TypeScript, JavaScript, Python, Java, Kotlin, C++, SQL, Bash} \\
+        
+        \textbf{Frontend}{: React.js, Next.js, Tailwind CSS, Cypress, HTML, CSS} \\
+        
+        \textbf{Backend}{: Node.js, NestJS, Spring Boot, Django, REST APIs, WebSockets, Apache Pulsar, PostgreSQL, MongoDB} \\
+        
+        \textbf{Tools}{: Git, Docker, Kubernetes, Linux, AWS, CI/CD (ArgoCD), Datadog, Figma} \\
+        
+        \textbf{Others}{: Clean Architecture, DDD, CQRS, OOP, API Design, Problem Solving}
+        
+        }}
+    \end{itemize}
+
+
+%-------------------------------------------
+\end{document}

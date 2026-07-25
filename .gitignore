@@ -1,2 +1,5 @@
 public/
 .opencode/
+static/*.aux
+static/*.log
+static/*.out

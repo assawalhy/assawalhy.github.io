@@ -34,7 +34,8 @@
 {{ $zageng := index $voluntary 1 }}
 {{ $experienceData := index site.Data $lang "experience" }}
 {{ $experience := cond (and $experienceData $experienceData.experience) $experienceData.experience site.Params.experience }}
-{{ $scicave := index $experience 0 }}
+{{ $taager := index $experience 0 }}
+{{ $scicave := index $experience 1 }}
 
 <div class="page-shell">
 
@@ -105,13 +106,28 @@
 
       <article class="tl-entry reveal">
         <div class="tl-entry__meta">
+          <span>{{ $taager.period }}</span>
+          <strong>{{ T "experienceTitle" }}</strong>
+        </div>
+        <div class="tl-entry__body">
+          <h3>{{ $taager.role }} &middot; {{ $taager.company }}</h3>
+          <p class="tl-entry__subtitle">{{ $taager.country }}</p>
+          <p>{{ cond $isAr "في Taager، صممت ميكروسيرفيسات تتواصل عبر Apache Pulsar، وعملت مع Node.js وSpring Boot Kotlin على قواعد بيانات SQL (PostgreSQL) وNoSQL (MongoDB). طبقت Clean Architecture وDDD وCQRS، وحققت تغطية اختبارات ~80% باستخدام Testcontainers وMockK. واكتسبت خبرة في ArgoCD وKubernetes وDatadog." "At Taager, I designed microservices communicating via Apache Pulsar, worked with Node.js and Spring Boot Kotlin across both SQL (PostgreSQL) and NoSQL (MongoDB) databases, applied Clean Architecture / DDD / CQRS, achieved ~80% test coverage with Testcontainers and MockK, and gained exposure to ArgoCD, Kubernetes, and Datadog." }}</p>
+          <div class="tl-tags">
+            {{ range $taager.technologies }}<span>{{ . }}</span>{{ end }}
+          </div>
+        </div>
+      </article>
+
+      <article class="tl-entry reveal">
+        <div class="tl-entry__meta">
           <span>{{ $scicave.period }}</span>
           <strong>{{ T "experienceTitle" }}</strong>
         </div>
         <div class="tl-entry__body">
           <h3>{{ $scicave.role }} &middot; {{ $scicave.company }}</h3>
           <p class="tl-entry__subtitle">{{ $scicave.country }}</p>
-          <p>{{ cond $isAr "في SciCave عملت على تطبيقات ويب حقيقية، حيث لا يكفي أن تعمل الواجهة في المتصفح فقط. شملت التجربة React وNext.js وLaravel وCypress وDocker وAWS، وربطت بين بناء الواجهة، الاختبار، جمع المتطلبات، وإدارة النشر." "At SciCave, I worked on real web applications where a screen working locally was only the beginning. The role connected React, Next.js, Laravel, Cypress, Docker, and AWS with requirements work, UI decisions, testing, and deployment." }}</p>
+          <p>{{ cond $isAr "في SciCave عملت على تطبيقات ويب حقيقية، حيث لا يكفي أن تعمل الواجهة في المتصفح فقط. شملت التجربة React وNext.js وCypress وDocker وAWS، وربطت بين بناء الواجهة، الاختبار، جمع المتطلبات، وإدارة النشر." "At SciCave, I worked on real web applications where a screen working locally was only the beginning. The role connected React, Next.js, Cypress, Docker, and AWS with requirements work, UI decisions, testing, and deployment." }}</p>
           <div class="tl-tags">
             {{ range $scicave.technologies }}<span>{{ . }}</span>{{ end }}
           </div>
