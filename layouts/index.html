@@ -3,8 +3,6 @@
 {{ $isAr := eq $lang "ar" }}
 {{ $authorData := index site.Data $lang "author" }}
 {{ $author := cond (and $authorData $authorData.author) $authorData.author site.Params }}
-{{ $projectsData := index site.Data $lang "projects" }}
-{{ $projects := cond (and $projectsData $projectsData.projects) $projectsData.projects site.Params.projects }}
 {{ $blogsData := index site.Data $lang "blogs" }}
 {{ $blogs := cond (and $blogsData $blogsData.blogs) $blogsData.blogs site.Params.blogs }}
 {{ $techData := index site.Data $lang "tech" }}
@@ -17,14 +15,10 @@
 {{ $recentWriting := cond $isAr "أحدث ما أكتب" "Recent writing" }}
 {{ $writingIntro := cond $isAr "أضع هنا أحدث مقالتين فقط حتى تظل الصفحة قصة مختصرة، لا أرشيفا كاملا." "Only the two newest posts live here, so the homepage stays a story rather than an archive." }}
 {{ $emptyBlogs := cond $isAr "لا توجد مقالات هنا بعد. أعمل على تشكيل التدوينة القادمة." "No posts here yet. I am still shaping the next write-up." }}
-{{ $futureLabel := cond $isAr "قادم لاحقا" "Future note" }}
 {{ $readPost := cond $isAr "اقرأ المقال" "Read post" }}
-{{ $openProject := cond $isAr "افتح المشروع" "Open project" }}
 {{ $contactLabel := cond $isAr "ابدأ محادثة" "Start a conversation" }}
 {{ $timelineAria := cond $isAr "خط زمني مختار للخبرات والمشاريع والتكريمات" "Curated timeline of experience, projects, and honors" }}
 
-{{ $arabi := index $projects 0 }}
-{{ $rasm := index $projects 1 }}
 {{ $honors := cond (and $authorData $authorData.honors) $authorData.honors site.Params.honors }}
 {{ $voluntary := cond (and $authorData $authorData.voluntary) $authorData.voluntary site.Params.voluntary }}
 {{ $acpc := index $honors 0 }}
@@ -97,45 +91,6 @@
 
       <article class="tl-entry reveal">
         <div class="tl-entry__meta">
-          <span>{{ $scicave.period }}</span>
-          <strong>{{ T "experienceTitle" }}</strong>
-        </div>
-        <div class="tl-entry__body">
-          <h3>{{ $scicave.role }} &middot; {{ $scicave.company }}</h3>
-          <p class="tl-entry__subtitle">{{ $scicave.country }}</p>
-          <p>{{ cond $isAr "في SciCave عملت على تطبيقات ويب حقيقية، حيث لا يكفي أن تعمل الواجهة في المتصفح فقط. شملت التجربة React وNext.js وCypress وDocker وAWS، وربطت بين بناء الواجهة، الاختبار، جمع المتطلبات، وإدارة النشر." "At SciCave, I worked on real web applications where a screen working locally was only the beginning. The role connected React, Next.js, Cypress, Docker, and AWS with requirements work, UI decisions, testing, and deployment." }}</p>
-          <div class="tl-tags">
-            {{ range $scicave.technologies }}<span>{{ . }}</span>{{ end }}
-          </div>
-        </div>
-      </article>
-
-      <article class="tl-entry reveal">
-        <div class="tl-entry__meta">
-          <span>{{ cond $isAr "2024" "2024" }}</span>
-          <strong>{{ T "voluntaryTitle" }}</strong>
-        </div>
-        <div class="tl-entry__body">
-          <h3>{{ $mentor.role }}</h3>
-          <p class="tl-entry__subtitle">{{ $mentor.organization }} &middot; {{ $mentor.period }}</p>
-          <p>{{ cond $isAr "كانت هذه المحطة عن تحويل الخبرة إلى أثر عند الآخرين. في مجتمع ICPC بجامعة الزقازيق، لم يكن دوري مجرد شرح خوارزميات، بل مساعدة الفرق على بناء طريقة تفكير للمسابقات، وكتابة مسائل، وتحويل التدريب الأسبوعي إلى عادة مستمرة." "This chapter was about turning experience into leverage for other people. In the ICPC Community at Zagazig University, the work was not just explaining algorithms. It was helping teams build contest instincts, writing problems, and making weekly practice feel like a repeatable system." }}</p>
-        </div>
-      </article>
-
-      <article class="tl-entry reveal">
-        <div class="tl-entry__meta">
-          <span>2022-2024</span>
-          <strong>{{ T "honorsTitle" }}</strong>
-        </div>
-        <div class="tl-entry__body">
-          <h3>{{ $acpc.title }}</h3>
-          <p class="tl-entry__subtitle">{{ $acpc.institution }}</p>
-          <p>{{ cond $isAr "ثلاث مرات متتالية في نهائيات ACPC جعلت البرمجة التنافسية أكثر من نشاط جانبي. كانت تدريبا طويل النفس على قراءة المسائل تحت الضغط، اختيار الخوارزمية المناسبة، وشرح الفكرة للفريق بسرعة ووضوح." "Qualifying for the ACPC finals three times made competitive programming more than a side activity. It became long-form training in reading under pressure, choosing the right algorithm, and explaining an idea to a team quickly and clearly." }}</p>
-        </div>
-      </article>
-
-      <article class="tl-entry reveal">
-        <div class="tl-entry__meta">
           <span>{{ $nasa.date }}</span>
           <strong>{{ T "honorsTitle" }}</strong>
         </div>
@@ -160,6 +115,45 @@
 
       <article class="tl-entry reveal">
         <div class="tl-entry__meta">
+          <span>{{ $scicave.period }}</span>
+          <strong>{{ T "experienceTitle" }}</strong>
+        </div>
+        <div class="tl-entry__body">
+          <h3>{{ $scicave.role }} &middot; {{ $scicave.company }}</h3>
+          <p class="tl-entry__subtitle">{{ $scicave.country }}</p>
+          <p>{{ cond $isAr "في SciCave عملت على تطبيقات ويب حقيقية، حيث لا يكفي أن تعمل الواجهة في المتصفح فقط. شملت التجربة React وNext.js وCypress وDocker وAWS، وربطت بين بناء الواجهة، الاختبار، جمع المتطلبات، وإدارة النشر." "At SciCave, I worked on real web applications where a screen working locally was only the beginning. The role connected React, Next.js, Cypress, Docker, and AWS with requirements work, UI decisions, testing, and deployment." }}</p>
+          <div class="tl-tags">
+            {{ range $scicave.technologies }}<span>{{ . }}</span>{{ end }}
+          </div>
+        </div>
+      </article>
+
+      <article class="tl-entry reveal">
+        <div class="tl-entry__meta">
+          <span>2022-2024</span>
+          <strong>{{ T "honorsTitle" }}</strong>
+        </div>
+        <div class="tl-entry__body">
+          <h3>{{ $acpc.title }}</h3>
+          <p class="tl-entry__subtitle">{{ $acpc.institution }}</p>
+          <p>{{ cond $isAr "ثلاث مرات متتالية في نهائيات ACPC جعلت البرمجة التنافسية أكثر من نشاط جانبي. كانت تدريبا طويل النفس على قراءة المسائل تحت الضغط، اختيار الخوارزمية المناسبة، وشرح الفكرة للفريق بسرعة ووضوح." "Qualifying for the ACPC finals three times made competitive programming more than a side activity. It became long-form training in reading under pressure, choosing the right algorithm, and explaining an idea to a team quickly and clearly." }}</p>
+        </div>
+      </article>
+
+      <article class="tl-entry reveal">
+        <div class="tl-entry__meta">
+          <span>{{ cond $isAr "2024" "2024" }}</span>
+          <strong>{{ T "voluntaryTitle" }}</strong>
+        </div>
+        <div class="tl-entry__body">
+          <h3>{{ $mentor.role }}</h3>
+          <p class="tl-entry__subtitle">{{ $mentor.organization }} &middot; {{ $mentor.period }}</p>
+          <p>{{ cond $isAr "كانت هذه المحطة عن تحويل الخبرة إلى أثر عند الآخرين. في مجتمع ICPC بجامعة الزقازيق، لم يكن دوري مجرد شرح خوارزميات، بل مساعدة الفرق على بناء طريقة تفكير للمسابقات، وكتابة مسائل، وتحويل التدريب الأسبوعي إلى عادة مستمرة." "This chapter was about turning experience into leverage for other people. In the ICPC Community at Zagazig University, the work was not just explaining algorithms. It was helping teams build contest instincts, writing problems, and making weekly practice feel like a repeatable system." }}</p>
+        </div>
+      </article>
+
+      <article class="tl-entry reveal">
+        <div class="tl-entry__meta">
           <span>{{ $zageng.period }}</span>
           <strong>{{ T "voluntaryTitle" }}</strong>
         </div>
@@ -169,31 +163,6 @@
           <p>{{ cond $isAr "في ZagEng، أصبحت الأتمتة طريقة لتقليل العمل المتكرر لا مجرد تجربة تقنية. قدت لجنة تقنية المعلومات لبناء أكثر من 13 بوت تليجرام ولوحة تحكم Django، وربطناها بتدفقات Make.com لخدمة الطلاب بسرعة أكبر." "At ZagEng, automation became a way to remove repeated work, not just a technical experiment. I led the IT committee in building 13+ Telegram bots and a Django dashboard, then connected them with Make.com flows to serve students faster." }}</p>
         </div>
       </article>
-
-      {{ range $project := slice $arabi $rasm }}
-      <article class="tl-entry tl-entry--project reveal">
-        <div class="tl-entry__meta">
-          <span>{{ $project.period }}</span>
-          <strong>{{ T "projectsTitle" }}</strong>
-        </div>
-        <div class="tl-entry__body">
-          <div class="tl-project">
-            <div class="tl-project__copy">
-              <h3>{{ $project.title }}</h3>
-              <p>{{ $project.story }}</p>
-              <p class="tl-future"><strong>{{ $futureLabel }}:</strong> {{ $project.future_note }}</p>
-              <div class="tl-tags">
-                {{ range split $project.tech "," }}<span>{{ . }}</span>{{ end }}
-              </div>
-              <a href="{{ $project.link }}" target="_blank" rel="noopener noreferrer" class="tl-link">{{ $openProject }}</a>
-            </div>
-            <div class="tl-project__img">
-              <img src="{{ $project.image }}" alt="{{ $project.title }}" loading="lazy">
-            </div>
-          </div>
-        </div>
-      </article>
-      {{ end }}
     </div>
   </section>
 
@@ -561,12 +530,12 @@
     padding: clamp(1.1rem, 3vw, 2rem);
     border: 1px solid #e5e5e5;
     border-radius: 0.75rem;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(240, 249, 255, 0.7));
+    background: #fff;
   }
 
   html.dark .tl-entry__body {
     border-color: #333;
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.98), rgba(15, 23, 42, 0.75));
+    background: #1a1a1a;
   }
 
   .tl-entry__body h3 {
