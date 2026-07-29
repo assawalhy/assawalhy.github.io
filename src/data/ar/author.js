@@ -1,0 +1,46 @@
+const author = {
+  author: {
+    name: "محمد سمير الصوالحي",
+    short_name: "الصوالحي",
+    location: "مصر",
+    description: "مهندس برمجيات متكامل شغوف ببناء تطبيقات الويب والبرمجة التنافسية والمصادر المفتوحة.",
+    email: "muhammadsawalhy@gmail.com",
+    github: "https://github.com/assawalhy",
+    linkedin: "https://linkedin.com/in/assawalhy"
+  },
+  honors: [
+    {
+      institution: "مسابقة ACPC",
+      title: "متسابق في الـ ACPC",
+      date: "2022، 2023، 2024",
+      description: "تأهلت لبطولة البرمجة الأفريقية والعربية ثلاث مرات."
+    },
+    {
+      institution: "NASA Space Apps في الإسماعيلية",
+      title: "تطبيقات الفضاء من ناسا - المركز الثالث ومرشح عالمي",
+      date: "نوفمبر 2023",
+      description: "فريق Pyroguardians حصل على المركز الثالث وأصبح مرشحاً عالمياً."
+    },
+    {
+      institution: "مؤسسة مهندسي الكهرباء والإلكترونيات (IEEE)",
+      title: "مسابقة IEEEXtreme 17.0 - ضمن أفضل 15 في مصر",
+      date: "أكتوبر 2023",
+      description: "كان الفريق ضمن أفضل 15 فريق من أصل 198 فريق مصري."
+    }
+  ],
+  voluntary: [
+    {
+      role: "مدرب ومُحاضر",
+      organization: "مجتمع ICPC بجامعة الزقازيق",
+      period: "مارس 2022 – أغسطس 2024",
+      description: "دربت عدة فرق في المجتمع وساعدت في تطوير مهاراتهم في الخوارزميات. قدمت جلسات أسبوعية وكتبت مسائل مسابقات ICPC."
+    },
+    {
+      role: "رئيس لجنة تقنية المعلومات",
+      organization: "فريق ZagEng",
+      period: "نوفمبر 2021 – يونيو 2023",
+      description: "قُدت اللجنة لبناء أكثر من 13 بوت تليجرام وأتمتت المهام المتكررة ببناء لوحة تحكم باستخدام Django ودمجها مع Make.com."
+    }
+  ]
+};
+export default author;

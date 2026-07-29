@@ -1,0 +1,22 @@
+const tech = {
+  row1: [
+    { icon: "devicon-typescript-plain", name: "TypeScript" },
+    { icon: "devicon-kotlin-plain", name: "Kotlin" },
+    { icon: "devicon-react-original", name: "React" },
+    { icon: "devicon-nextjs-plain", name: "Next.js" },
+    { icon: "devicon-spring-plain", name: "Spring Boot" },
+    { icon: "devicon-nodejs-plain", name: "Node.js" },
+    { icon: "devicon-python-plain", name: "Python" },
+    { icon: "devicon-tailwindcss-plain", name: "Tailwind CSS" }
+  ],
+  row2: [
+    { icon: "devicon-docker-plain", name: "Docker" },
+    { icon: "devicon-postgresql-plain", name: "PostgreSQL" },
+    { icon: "devicon-mongodb-plain", name: "MongoDB" },
+    { icon: "devicon-kubernetes-plain", name: "Kubernetes" },
+    { icon: "devicon-cypress-plain", name: "Cypress" },
+    { icon: "devicon-amazonwebservices-plain", name: "AWS" },
+    { icon: "devicon-git-plain", name: "Git" }
+  ]
+};
+export default tech;

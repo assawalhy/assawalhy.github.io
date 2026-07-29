@@ -82,30 +82,6 @@
     <div class="timeline" aria-label="{{ $timelineAria }}">
       <article class="tl-entry reveal">
         <div class="tl-entry__meta">
-          <span>{{ cond $isAr "2024" "2024" }}</span>
-          <strong>{{ T "voluntaryTitle" }}</strong>
-        </div>
-        <div class="tl-entry__body">
-          <h3>{{ $mentor.role }}</h3>
-          <p class="tl-entry__subtitle">{{ $mentor.organization }} &middot; {{ $mentor.period }}</p>
-          <p>{{ cond $isAr "كانت هذه المحطة عن تحويل الخبرة إلى أثر عند الآخرين. في مجتمع ICPC بجامعة الزقازيق، لم يكن دوري مجرد شرح خوارزميات، بل مساعدة الفرق على بناء طريقة تفكير للمسابقات، وكتابة مسائل، وتحويل التدريب الأسبوعي إلى عادة مستمرة." "This chapter was about turning experience into leverage for other people. In the ICPC Community at Zagazig University, the work was not just explaining algorithms. It was helping teams build contest instincts, writing problems, and making weekly practice feel like a repeatable system." }}</p>
-        </div>
-      </article>
-
-      <article class="tl-entry reveal">
-        <div class="tl-entry__meta">
-          <span>2022-2024</span>
-          <strong>{{ T "honorsTitle" }}</strong>
-        </div>
-        <div class="tl-entry__body">
-          <h3>{{ $acpc.title }}</h3>
-          <p class="tl-entry__subtitle">{{ $acpc.institution }}</p>
-          <p>{{ cond $isAr "ثلاث مرات متتالية في نهائيات ACPC جعلت البرمجة التنافسية أكثر من نشاط جانبي. كانت تدريبا طويل النفس على قراءة المسائل تحت الضغط، اختيار الخوارزمية المناسبة، وشرح الفكرة للفريق بسرعة ووضوح." "Qualifying for the ACPC finals three times made competitive programming more than a side activity. It became long-form training in reading under pressure, choosing the right algorithm, and explaining an idea to a team quickly and clearly." }}</p>
-        </div>
-      </article>
-
-      <article class="tl-entry reveal">
-        <div class="tl-entry__meta">
           <span>{{ $taager.period }}</span>
           <strong>{{ T "experienceTitle" }}</strong>
         </div>
@@ -131,6 +107,30 @@
           <div class="tl-tags">
             {{ range $scicave.technologies }}<span>{{ . }}</span>{{ end }}
           </div>
+        </div>
+      </article>
+
+      <article class="tl-entry reveal">
+        <div class="tl-entry__meta">
+          <span>{{ cond $isAr "2024" "2024" }}</span>
+          <strong>{{ T "voluntaryTitle" }}</strong>
+        </div>
+        <div class="tl-entry__body">
+          <h3>{{ $mentor.role }}</h3>
+          <p class="tl-entry__subtitle">{{ $mentor.organization }} &middot; {{ $mentor.period }}</p>
+          <p>{{ cond $isAr "كانت هذه المحطة عن تحويل الخبرة إلى أثر عند الآخرين. في مجتمع ICPC بجامعة الزقازيق، لم يكن دوري مجرد شرح خوارزميات، بل مساعدة الفرق على بناء طريقة تفكير للمسابقات، وكتابة مسائل، وتحويل التدريب الأسبوعي إلى عادة مستمرة." "This chapter was about turning experience into leverage for other people. In the ICPC Community at Zagazig University, the work was not just explaining algorithms. It was helping teams build contest instincts, writing problems, and making weekly practice feel like a repeatable system." }}</p>
+        </div>
+      </article>
+
+      <article class="tl-entry reveal">
+        <div class="tl-entry__meta">
+          <span>2022-2024</span>
+          <strong>{{ T "honorsTitle" }}</strong>
+        </div>
+        <div class="tl-entry__body">
+          <h3>{{ $acpc.title }}</h3>
+          <p class="tl-entry__subtitle">{{ $acpc.institution }}</p>
+          <p>{{ cond $isAr "ثلاث مرات متتالية في نهائيات ACPC جعلت البرمجة التنافسية أكثر من نشاط جانبي. كانت تدريبا طويل النفس على قراءة المسائل تحت الضغط، اختيار الخوارزمية المناسبة، وشرح الفكرة للفريق بسرعة ووضوح." "Qualifying for the ACPC finals three times made competitive programming more than a side activity. It became long-form training in reading under pressure, choosing the right algorithm, and explaining an idea to a team quickly and clearly." }}</p>
         </div>
       </article>
 

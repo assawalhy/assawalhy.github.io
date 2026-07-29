@@ -1,5 +1,9 @@
 public/
 .opencode/
-static/*.aux
-static/*.log
-static/*.out
+*.aux
+*.log
+*.out
+.omo/
+node_modules/
+dist/
+
