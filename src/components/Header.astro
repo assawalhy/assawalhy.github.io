@@ -1,0 +1,331 @@
+---
+import type { Lang } from '../i18n';
+import { t } from '../i18n';
+
+export interface Props {
+  lang: Lang;
+  dir: 'ltr' | 'rtl';
+  author?: { name?: string; short_name?: string };
+}
+
+const { lang, dir, author } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+const menuItems: Record<Lang, Array<{ label: string; href: string }>> = {
+  en: [
+    { label: 'Projects', href: '/en/projects/' },
+    { label: 'Seminars', href: '/en/seminars/' },
+    { label: 'Blog', href: '/en/blogs/' },
+    { label: 'Contact', href: '/en/contact/' },
+  ],
+  ar: [
+    { label: 'المشاريع', href: '/ar/projects/' },
+    { label: 'اللقاءات', href: '/ar/seminars/' },
+    { label: 'المدونة', href: '/ar/blogs/' },
+    { label: 'تواصل', href: '/ar/contact/' },
+  ],
+};
+
+const otherLang: Lang = lang === 'en' ? 'ar' : 'en';
+const translatedPath = currentPath.replace(`/${lang}/`, `/${otherLang}/`);
+
+const displayName = author?.short_name || author?.name || 'Assawalhy';
+---
+
+<header class="py-6 relative z-40">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div class="flex justify-between items-center">
+        <a href={`/${lang}/`} class="flex gap-2 items-center text-xl font-bold text-[#262626] dark:text-[#f5f5f5] hover:text-[#0284c7] dark:hover:text-[#0ea5e9] transition-colors duration-300">
+          <img class="rounded-full" src="/favicon-32x32.png" alt="" width="32" height="32" />
+          {displayName}
+        </a>
+        <!-- Hamburger menu button for mobile -->
+        <button id="mobile-menu-button" class="md:hidden p-2.5 text-[#525252] dark:text-[#a3a3a3] hover:text-[#262626] dark:hover:text-[#f5f5f5] focus:outline-none focus:ring-2 focus:ring-[#0284c7] dark:focus:ring-[#0ea5e9] rounded-md">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex flex-wrap justify-center items-center gap-4 md:gap-6">
+        {menuItems[lang].map((item) => (
+          <a
+            href={item.href}
+            class={`inline-block text-lg transition-colors duration-300 ${
+              currentPath === item.href || currentPath.startsWith(item.href.replace(/\/$/, ''))
+                ? 'text-[#0284c7] dark:text-[#0ea5e9] font-semibold'
+                : 'text-[#525252] dark:text-[#a3a3a3] hover:text-[#262626] dark:hover:text-[#f5f5f5]'
+            }`}
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+      <div class="hidden md:flex justify-end items-center">
+        <a
+          href="/resume.pdf"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-[#d4d4d4] dark:border-[#404040] text-[#262626] dark:text-[#f5f5f5] bg-white dark:bg-[#1a1a1a] hover:border-[#0284c7] dark:hover:border-[#0ea5e9] hover:text-[#0284c7] dark:hover:text-[#0ea5e9] transition-all duration-300 font-semibold shadow-sm hover:shadow-md mr-4"
+          target="_blank"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          {lang === 'ar' ? 'السيرة الذاتية' : 'Resume'}
+        </a>
+        <!-- Language Switcher - Desktop -->
+        <div class="language-switcher ml-4">
+          <div class="language-switcher-btn text-lg text-[#525252] dark:text-[#a3a3a3] hover:text-[#262626] dark:hover:text-[#f5f5f5] transition-colors duration-300 p-2 rounded-md">
+            {lang.toUpperCase()}
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </div>
+          <div class="language-dropdown">
+            <a
+              href={lang === 'en' ? currentPath : translatedPath}
+              class={`block px-4 py-3 text-[#525252] dark:text-[#a3a3a3] hover:text-[#262626] dark:hover:text-[#f5f5f5] transition-colors duration-300 ${lang === 'en' ? 'font-semibold' : ''}`}
+            >
+              English
+            </a>
+            <a
+              href={lang === 'ar' ? currentPath : translatedPath}
+              class={`block px-4 py-3 text-[#525252] dark:text-[#a3a3a3] hover:text-[#262626] dark:hover:text-[#f5f5f5] transition-colors duration-300 ${lang === 'ar' ? 'font-semibold' : ''}`}
+            >
+              العربية
+            </a>
+          </div>
+        </div>
+        <button id="theme-toggle-button-desktop" class="ml-4 inline-block text-lg text-[#525252] dark:text-[#a3a3a3] hover:text-[#262626] dark:hover:text-[#f5f5f5] transition-colors duration-300 p-2 rounded-md">
+          <svg id="theme-toggle-dark-icon-desktop" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5">
+            <path d="M21.7519 15.0021C20.597 15.484 19.3296 15.7501 18 15.7501C12.6152 15.7501 8.25 11.3849 8.25 6.00011C8.25 4.67052 8.51614 3.40308 8.99806 2.24817C5.47566 3.71798 3 7.19493 3 11.2501C3 16.6349 7.36522 21.0001 12.75 21.0001C16.8052 21.0001 20.2821 18.5245 21.7519 15.0021Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg id="theme-toggle-light-icon-desktop" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" class="w-5 h-5 hidden">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 bg-white dark:bg-[#1a1a1a] z-50 invisible opacity-0 pointer-events-none transition-all duration-300">
+    <div class="flex flex-col h-full w-full min-w-0">
+      <div class="flex justify-between items-center gap-3 p-4 sm:p-6 min-w-0">
+        <span class="text-xl font-bold text-[#262626] dark:text-[#f5f5f5] shrink-0">{lang === 'ar' ? 'القائمة' : 'Menu'}</span>
+        <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+          <!-- Language Switcher - Mobile -->
+          <div class="language-switcher">
+            <div class="language-switcher-btn text-[#525252] dark:text-[#a3a3a3] hover:text-[#262626] dark:hover:text-[#f5f5f5] transition-colors duration-300 flex items-center p-2 rounded-md">
+              {lang.toUpperCase()}
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m6 9 6 6 6-6"/>
+              </svg>
+            </div>
+            <div class="language-dropdown" dir={dir}>
+              <a href={lang === 'en' ? currentPath : translatedPath} class="block px-4 py-3 text-[#525252] dark:text-[#a3a3a3] hover:text-[#262626] dark:hover:text-[#f5f5f5] transition-colors duration-300">English</a>
+              <a href={lang === 'ar' ? currentPath : translatedPath} class="block px-4 py-3 text-[#525252] dark:text-[#a3a3a3] hover:text-[#262626] dark:hover:text-[#f5f5f5] transition-colors duration-300">العربية</a>
+            </div>
+          </div>
+          <button id="theme-toggle-button-mobile" class="text-[#525252] dark:text-[#a3a3a3] hover:text-[#262626] dark:hover:text-[#f5f5f5] transition-colors duration-300 flex items-center p-2 rounded-md">
+            <svg id="theme-toggle-dark-icon-mobile" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5">
+              <path d="M21.7519 15.0021C20.597 15.484 19.3296 15.7501 18 15.7501C12.6152 15.7501 8.25 11.3849 8.25 6.00011C8.25 4.67052 8.51614 3.40308 8.99806 2.24817C5.47566 3.71798 3 7.19493 3 11.2501C3 16.6349 7.36522 21.0001 12.75 21.0001C16.8052 21.0001 20.2821 18.5245 21.7519 15.0021Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <svg id="theme-toggle-light-icon-mobile" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" class="w-5 h-5 hidden">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"/>
+            </svg>
+          </button>
+          <button id="mobile-menu-close" class="p-2.5 text-[#525252] dark:text-[#a3a3a3] hover:text-[#262626] dark:hover:text-[#f5f5f5] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#0284c7] dark:focus:ring-[#0ea5e9] rounded-md">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <nav class="flex flex-col px-4 sm:px-6 pt-4 sm:pt-6 space-y-4 min-w-0 w-full box-border">
+        {menuItems[lang].map((item) => (
+          <a
+            href={item.href}
+            class="text-xl text-[#525252] dark:text-[#a3a3a3] hover:text-[#262626] dark:hover:text-[#f5f5f5] transition-colors duration-300"
+            data-menu-link
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+      <div class="px-4 sm:px-6 pb-4 sm:pb-6 min-w-0 w-full box-border">
+        <a
+          href="/resume.pdf"
+          class="flex w-full min-w-0 max-w-full box-border items-center justify-center gap-2 px-3 py-2 rounded-md border border-[#d4d4d4] dark:border-[#404040] text-[#262626] dark:text-[#f5f5f5] bg-white dark:bg-[#1a1a1a] hover:border-[#0284c7] dark:hover:border-[#0ea5e9] hover:text-[#0284c7] dark:hover:text-[#0ea5e9] transition-all duration-300 font-semibold text-sm sm:text-base"
+          target="_blank"
+          rel="noopener"
+          data-menu-link
+          aria-label={lang === 'ar' ? 'تحميل السيرة الذاتية' : 'Download Resume'}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          <span class="min-w-0 truncate">{lang === 'ar' ? 'السيرة الذاتية' : 'Resume'}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .language-switcher {
+    position: relative;
+    display: inline-block;
+  }
+  .language-switcher-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    cursor: pointer;
+  }
+  .language-dropdown {
+    display: none;
+    position: absolute;
+    background-color: var(--bg-secondary, white);
+    min-width: 120px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  html.dark .language-dropdown {
+    background-color: #1a1a1a;
+  }
+  .language-switcher:hover .language-dropdown {
+    display: block;
+  }
+  .language-dropdown a:hover {
+    background-color: rgba(0,0,0,0.05);
+  }
+  html.dark .language-dropdown a:hover {
+    background-color: rgba(255,255,255,0.05);
+  }
+  #mobile-menu {
+    inset: 0;
+    width: 100%;
+    overflow-x: clip;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  #mobile-menu .language-dropdown {
+    right: 0;
+    left: auto;
+  }
+  html[dir="rtl"] #mobile-menu .language-dropdown {
+    right: auto;
+    left: 0;
+  }
+</style>
+
+<script>
+  // Mobile menu functionality
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenuClose = document.getElementById('mobile-menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuLinks = document.querySelectorAll('[data-menu-link]');
+
+  function openMobileMenu() {
+    mobileMenu.classList.remove('invisible', 'opacity-0', 'pointer-events-none');
+    document.documentElement.style.overflow = 'hidden';
+    document.documentElement.style.overflowX = 'hidden';
+    document.body.style.overflow = 'hidden';
+    document.body.style.overflowX = 'hidden';
+  }
+
+  function closeMobileMenu() {
+    mobileMenu.classList.add('invisible', 'opacity-0', 'pointer-events-none');
+    document.documentElement.style.overflow = '';
+    document.documentElement.style.overflowX = '';
+    document.body.style.overflow = '';
+    document.body.style.overflowX = '';
+  }
+
+  if (mobileMenuButton) mobileMenuButton.addEventListener('click', openMobileMenu);
+  if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu);
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+
+  // Theme toggle functionality
+  const themeToggleBtnDesktop = document.getElementById('theme-toggle-button-desktop');
+  const themeToggleDarkIconDesktop = document.getElementById('theme-toggle-dark-icon-desktop');
+  const themeToggleLightIconDesktop = document.getElementById('theme-toggle-light-icon-desktop');
+  const themeToggleBtnMobile = document.getElementById('theme-toggle-button-mobile');
+  const themeToggleDarkIconMobile = document.getElementById('theme-toggle-dark-icon-mobile');
+  const themeToggleLightIconMobile = document.getElementById('theme-toggle-light-icon-mobile');
+
+  function updateIcons(isDarkMode) {
+    if (themeToggleDarkIconDesktop && themeToggleLightIconDesktop) {
+      if (isDarkMode) {
+        themeToggleLightIconDesktop.classList.remove('hidden');
+        themeToggleDarkIconDesktop.classList.add('hidden');
+      } else {
+        themeToggleLightIconDesktop.classList.add('hidden');
+        themeToggleDarkIconDesktop.classList.remove('hidden');
+      }
+    }
+    if (themeToggleDarkIconMobile && themeToggleLightIconMobile) {
+      if (isDarkMode) {
+        themeToggleLightIconMobile.classList.remove('hidden');
+        themeToggleDarkIconMobile.classList.add('hidden');
+      } else {
+        themeToggleLightIconMobile.classList.add('hidden');
+        themeToggleDarkIconMobile.classList.remove('hidden');
+      }
+    }
+  }
+
+  function applyTheme(isDarkMode) {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('color-theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('color-theme', 'light');
+    }
+    updateIcons(isDarkMode);
+  }
+
+  let initialIsDarkMode = false;
+  if (localStorage.getItem('color-theme') === 'dark' || 
+      (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    initialIsDarkMode = true;
+  }
+  if (initialIsDarkMode && !document.documentElement.classList.contains('dark')) {
+    document.documentElement.classList.add('dark');
+  }
+  applyTheme(initialIsDarkMode);
+
+  function themeToggleClickHandler() {
+    const isCurrentlyDark = document.documentElement.classList.contains('dark');
+    applyTheme(!isCurrentlyDark);
+    if (window.innerWidth < 768) {
+      closeMobileMenu();
+    }
+  }
+
+  if (themeToggleBtnDesktop) themeToggleBtnDesktop.addEventListener('click', themeToggleClickHandler);
+  if (themeToggleBtnMobile) themeToggleBtnMobile.addEventListener('click', themeToggleClickHandler);
+
+  mobileMenu.addEventListener('click', function(event) {
+    if (event.target === mobileMenu) {
+      closeMobileMenu();
+    }
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && mobileMenu.classList.contains('invisible') === false) {
+      closeMobileMenu();
+    }
+  });
+</script>

@@ -26,6 +26,16 @@ const projects = {
       image: "/images/projects/da7ee7.jpg",
       link: "https://github.com/assawalhy/da7ee7-bot-dashboard",
       tech: "Python,Django,JavaScript,Bootstrap"
+    },
+    {
+      title: "TDCO – Projects Map",
+      description: "Bilingual (EN/AR) interactive map of TDCO's construction projects across all 13 Saudi regions, with region, city, and project navigation, POI layers, search, and shareable deep links.",
+      image: "/images/projects/tdco-interactive-map.png",
+      link: "https://tdco-interactive-map.pages.dev/",
+      tech: "Leaflet,MapLibre GL,Vanilla JS,Vite",
+      period: "Aug 2026",
+      story: "For TDCO (Technical Dimensions), I built an interactive map that turns a long list of construction project locations into a three-level experience: an overview of the kingdom, a region view with markers and a sidebar, and a project-focused detail state. A bilingual EN/AR layer (with full RTL support) and shareable URL state let users jump straight to a region or a single project. I handled a data pipeline sourcing points of interest from OpenStreetMap, plus search and POI toggles over a custom dark theme.",
+      future_note: "The map data is regenerated from a documented pipeline, so adding or correcting project locations stays quick and reliable as TDCO's portfolio grows."
     }
   ]
 };

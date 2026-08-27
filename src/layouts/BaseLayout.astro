@@ -1,0 +1,137 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import type { Lang } from '../i18n';
+import { t } from '../i18n';
+
+export interface Props {
+  lang: Lang;
+  dir: 'ltr' | 'rtl';
+  title: string;
+  description?: string;
+  hideHeader?: boolean;
+  hideFooter?: boolean;
+}
+
+const { lang, dir, title, description, hideHeader, hideFooter } = Astro.props;
+const siteTitle = t(lang, 'site_title');
+const fullTitle = title === siteTitle ? siteTitle : `${title} - ${siteTitle}`;
+---
+
+<!doctype html>
+<html lang={lang} dir={dir}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{fullTitle}</title>
+    {description && <meta name="description" content={description} />}
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Google Fonts: Space Grotesk (headings), Manrope (body), IBM Plex Sans Arabic (RTL) -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    {dir === 'rtl' && (
+      <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    )}
+
+    <!-- Devicon -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <!-- Theme initialization (prevents FOUC) -->
+    <script>
+      if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+
+    <style is:global>
+      :root {
+        color-scheme: light;
+      }
+      html.dark {
+        color-scheme: dark;
+      }
+      html,
+      body {
+        overflow-x: clip;
+        max-width: 100%;
+      }
+      main {
+        overflow-x: clip;
+      }
+
+      body {
+        font-family: 'Manrope', 'IBM Plex Sans Arabic', sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6, .font-display {
+        font-family: 'Space Grotesk', 'IBM Plex Sans Arabic', sans-serif;
+      }
+
+      html[dir="rtl"] {
+        font-family: 'IBM Plex Sans Arabic', 'Manrope', sans-serif;
+      }
+      html[dir="rtl"] h1,
+      html[dir="rtl"] h2,
+      html[dir="rtl"] h3,
+      html[dir="rtl"] h4,
+      html[dir="rtl"] h5,
+      html[dir="rtl"] h6 {
+        font-family: 'IBM Plex Sans Arabic', 'Space Grotesk', sans-serif;
+      }
+
+      .tech-icon {
+        filter: grayscale(100%) brightness(200%);
+        transition: all 0.3s ease;
+      }
+      .tech-icon:hover {
+        filter: none;
+      }
+
+      /* Article content styles */
+      .article-content {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+      }
+      .article-content pre {
+        overflow-x: auto;
+        max-width: 100%;
+      }
+      .article-content img,
+      .article-content video,
+      .article-content iframe {
+        max-width: 100%;
+        height: auto;
+      }
+      .article-content table {
+        display: block;
+        overflow-x: auto;
+        max-width: 100%;
+      }
+      @media (max-width: 639px) {
+        .article-content {
+          font-size: 0.95rem;
+          line-height: 1.65;
+        }
+        .article-content h1 { font-size: 1.5rem; }
+        .article-content h2 { font-size: 1.25rem; }
+        .article-content h3 { font-size: 1.125rem; }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-white dark:bg-[#121212] text-[#262626] dark:text-[#f5f5f5]">
+    {!hideHeader && <Header lang={lang} dir={dir} />}
+    <main>
+      <slot />
+    </main>
+    {!hideFooter && <Footer lang={lang} />}
+
+    <!-- impeccable-live-start (kept for compatibility) -->
+    <!-- impeccable-live-end -->
+  </body>
+</html>

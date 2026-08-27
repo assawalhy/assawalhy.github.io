@@ -1,0 +1,63 @@
+{
+  "/en/": [
+    "Projects",
+    "Seminars",
+    "Blog",
+    "Contact",
+    "Full-stack software engineer",
+    "From curiosity to projects, contests, and communities.",
+    "ACPC Finalist",
+    "Muhammad Samir Assawalhy"
+  ],
+  "/ar/": [
+    "المشاريع",
+    "اللقاءات",
+    "المدونة",
+    "تواصل",
+    "مهندس برمجيات متكامل",
+    "محمد سمير الصوالحي"
+  ],
+  "/en/projects/": [
+    "Arabi.js",
+    "Rasm",
+    "Da7ee7 Bots",
+    "TDCO – Projects Map",
+    "Leaflet",
+    "MapLibre GL",
+    "https://tdco-interactive-map.pages.dev/"
+  ],
+  "/ar/projects/": [
+    "Arabi.js",
+    "رسم - Rasm",
+    "Da7ee7 Bots",
+    "خريطة مشاريع TDCO التفاعلية",
+    "Leaflet",
+    "MapLibre GL",
+    "https://tdco-interactive-map.pages.dev/"
+  ],
+  "/en/blogs/": [
+    "My Journey in Competitive Programming",
+    "Building Arabi.js",
+    "ACPC finalist"
+  ],
+  "/ar/blogs/": [
+    "لا توجد مقالات هنا بعد"
+  ],
+  "/en/seminars/": [
+    "Open Source & Digital Products",
+    "Mortakaz"
+  ],
+  "/ar/seminars/": [
+    "ليمونة",
+    "مرتكز"
+  ],
+  "/en/contact/": [
+    "Muhammad Samir Assawalhy",
+    "muhammadsawalhy@gmail.com"
+  ],
+  "/ar/contact/": [
+    "ابدأ محادثة",
+    "البريد الإلكتروني",
+    "muhammadsawalhy@gmail.com"
+  ]
+}

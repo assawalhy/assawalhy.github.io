@@ -1,6 +1,22 @@
+## Commit/Push policy
+
+Never commit or push unless explicitly instructed. If you think committing or pushing would be beneficial, ask first before doing so.
+
 ## Run the local dev server
 
-User `make` command to run the local dev server which should tell the server to use the localhost link as the base URL.
+The site is an Astro project. Run the local dev server with:
+
+```bash
+npm run dev     # Astro dev server (http://localhost:4321)
+npm run build   # Production build to dist/
+npm run preview # Serve the production build
+```
+
+Run the UI regression tests with:
+
+```bash
+npm test
+```
 
 ## Git operations
 

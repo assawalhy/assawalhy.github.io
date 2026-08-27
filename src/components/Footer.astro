@@ -1,0 +1,59 @@
+---
+import type { Lang } from '../i18n';
+
+export interface Props {
+  lang: Lang;
+  author?: { name?: string; github?: string };
+}
+
+const { lang, author } = Astro.props;
+const year = new Date().getFullYear();
+const name = author?.name || 'Muhammad Samir Assawalhy';
+const github = author?.github || 'https://github.com/assawalhy';
+---
+
+<footer class="mt-32 text-center">
+  <div class="max-w-3xl mx-auto">
+    <div class="border-t border-[#d4d4d4] dark:border-[#404040] pt-5">
+      <div class="flex flex-col items-center justify-center gap-2">
+        <p class="text-[#525252] dark:text-[#a3a3a3] text-sm">
+          &copy; {year} {name}
+        </p>
+        <p class="text-[#525252] dark:text-[#a3a3a3] text-sm pb-12">
+          {lang === 'ar' ? 'بُني باستخدام' : 'Built with'}{' '}
+          <a href="https://astro.build/" target="_blank" class="animated-link text-[#0284c7] dark:text-[#0ea5e9] hover:text-[#262626] dark:hover:text-[#f5f5f5]">
+            Astro
+          </a>
+          . {lang === 'ar' ? 'ألقِ نظرة على' : 'Take a look at my'}{' '}
+          <a href={github} target="_blank" class="animated-link text-[#0284c7] dark:text-[#0ea5e9] hover:text-[#262626] dark:hover:text-[#f5f5f5]">
+            GitHub
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .animated-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+  .animated-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -1px;
+    left: 0;
+    background-color: #0284c7;
+    transition: width 0.3s ease-in-out;
+  }
+  .animated-link:hover::after {
+    width: 100%;
+  }
+  html.dark .animated-link::after {
+    background-color: #0ea5e9;
+  }
+</style>

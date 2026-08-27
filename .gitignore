@@ -4,6 +4,8 @@ public/
 *.log
 *.out
 .omo/
+.astro/
 node_modules/
 dist/
+.tmp-screens/
 
