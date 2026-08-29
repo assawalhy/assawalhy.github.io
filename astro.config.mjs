@@ -1,11 +1,13 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://assawalhy.xyz',
   publicDir: 'static',
-  integrations: [tailwind()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'ar'],
