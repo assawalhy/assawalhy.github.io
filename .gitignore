@@ -9,3 +9,8 @@ node_modules/
 dist/
 .tmp-screens/
 
+# playwright-cli writes page snapshots (.yml) and screenshots (.png) into
+# ./.playwright-cli/ relative to the cwd, so running it from a repo checkout
+# would otherwise leave untracked files behind. Never commit them.
+/.playwright-cli/
+

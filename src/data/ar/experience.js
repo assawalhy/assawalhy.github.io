@@ -1,6 +1,21 @@
 const experience = {
   experience: [
     {
+      role: "مهندس برمجيات بعقد",
+      company: "Bond Group",
+      period: "سبتمبر 2026 - الآن",
+      company_link: "https://adbond.sa",
+      country: "الرياض، السعودية (عن بعد)",
+      description: "بناء CRM للعقارات، وتحويله إلى منتج SaaS لوسطاء ومطوري العقارات.",
+      responsibilities: [
+        "بناء CRM لوسطاء ومطوري العقارات ضمن فريق من شخصين، باستخدام NestJS وNext.js وDrizzle ORM وPostgreSQL.",
+        "دمج إعلانات Meta lead ads عبر حساب Business، واستيراد العملاء المحتملين من حملات فيسبوك وإنستغرام إلى الـ CRM.",
+        "بناء بوتات واتساب متصلة بالـ CRM لاستقبال العملاء وأتمتة المتابعة، مع تكامل Google Calendar وأتمتة سير العمل.",
+        "النظام يعمل في الإنتاج وعالج حوالي 1000 عميل محتمل."
+      ],
+      technologies: ["TypeScript", "NestJS", "Next.js", "Drizzle ORM", "PostgreSQL", "Meta Lead Ads", "WhatsApp Bots", "Google Calendar"]
+    },
+    {
       role: "متدرب تطوير الواجهات الخلفية",
       company: "Taager",
       period: "يونيو 2026 - سبتمبر 2026",
@@ -18,9 +33,9 @@ const experience = {
       technologies: ["TypeScript", "Node.js", "Kotlin", "Spring Boot", "Apache Pulsar", "PostgreSQL", "MongoDB", "Clean Architecture", "DDD", "CQRS", "Testcontainers", "MockK", "Docker", "Kubernetes", "ArgoCD", "Datadog", "Feature Flags"]
     },
     {
-      role: "مهندس واجهات أمامية",
+      role: "مهندس واجهات أمامية (دوام جزئي أثناء البكالوريوس)",
       company: "SciCave",
-      period: "أغسطس 2023 - يونيو 2024",
+      period: "أغسطس 2021 - مايو 2024",
       company_link: "https://scicave.com",
       country: "القاهرة، مصر",
       description: "بناء تطبيقات ويب باستخدام تقنيات حديثة وإدارة النشر السحابي.",

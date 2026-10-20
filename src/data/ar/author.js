@@ -6,7 +6,8 @@ const author = {
     description: "مهندس برمجيات متكامل شغوف ببناء تطبيقات الويب والبرمجة التنافسية والمصادر المفتوحة.",
     email: "muhammadsawalhy@gmail.com",
     github: "https://github.com/assawalhy",
-    linkedin: "https://linkedin.com/in/assawalhy"
+    linkedin: "https://linkedin.com/in/assawalhy",
+    x: "https://x.com/assawalhy"
   },
   honors: [
     {

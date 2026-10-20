@@ -1,6 +1,21 @@
 const experience = {
   experience: [
     {
+      role: "Contract Software Engineer",
+      company: "Bond Group",
+      period: "Sep 2026 - Present",
+      company_link: "https://adbond.sa",
+      country: "Riyadh, KSA (Remote)",
+      description: "Building a real estate CRM, and converting it into a SaaS product for brokers and developers.",
+      responsibilities: [
+        "Building a CRM for real estate brokers and developers as part of a two person team, with NestJS services, a Next.js front end, Drizzle ORM and PostgreSQL.",
+        "Integrated Meta lead ads through the Business account, importing Facebook and Instagram campaign leads into the CRM.",
+        "Built WhatsApp bots connected to the CRM for lead capture and follow up automation, plus Google Calendar integration and workflow automation.",
+        "The system is in production and has processed around 1,000 leads."
+      ],
+      technologies: ["TypeScript", "NestJS", "Next.js", "Drizzle ORM", "PostgreSQL", "Meta Lead Ads", "WhatsApp Bots", "Google Calendar"]
+    },
+    {
       role: "Backend Intern",
       company: "Taager",
       period: "Jun 2026 - Sep 2026",
@@ -18,9 +33,9 @@ const experience = {
       technologies: ["TypeScript", "Node.js", "Kotlin", "Spring Boot", "Apache Pulsar", "PostgreSQL", "MongoDB", "Clean Architecture", "DDD", "CQRS", "Testcontainers", "MockK", "Docker", "Kubernetes", "ArgoCD", "Datadog", "Feature Flags"]
     },
     {
-      role: "Frontend Engineer",
+      role: "Frontend Engineer (part-time during BSc)",
       company: "SciCave",
-      period: "Aug 2023 - Jun 2024",
+      period: "Aug 2021 - May 2024",
       company_link: "https://scicave.com",
       country: "Cairo, Egypt",
       description: "Built web applications using modern technologies and managed cloud deployments.",

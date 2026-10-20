@@ -35,8 +35,9 @@ const nasa = honors[1];
 const ieee = honors[2];
 const mentor = voluntary[0];
 const zageng = voluntary[1];
-const taager = experience[0];
-const scicave = experience[1];
+const taager = experience.find((e: any) => e.company === 'Taager');
+const scicave = experience.find((e: any) => e.company === 'SciCave');
+const bond = experience.find((e: any) => e.company === 'Bond Group');
 
 // Homepage copy
 const heroKicker = isAr ? 'مهندس برمجيات متكامل' : 'Full-stack software engineer';
@@ -96,6 +97,26 @@ const readPost = isAr ? 'اقرأ المقال' : 'Read post';
         <p>{storyIntro}</p>
       </div>
       <div class="timeline" aria-label={isAr ? 'خط زمني مختار للخبرات والمشاريع والتكريمات' : 'Curated timeline of experience, projects, and honors'}>
+        {bond && (
+          <article class="tl-entry reveal">
+            <div class="tl-entry__meta">
+              <span>{bond.period}</span>
+              <strong>{t('experienceTitle', lang)}</strong>
+            </div>
+            <div class="tl-entry__body">
+              <h3>{bond.role} &middot; {bond.company}</h3>
+              <p class="tl-entry__subtitle">{bond.country}</p>
+              <p>{isAr
+                ? 'في Bond Group أعمل على CRM لوسطاء ومطوري العقارات ضمن فريق من شخصين، باستخدام NestJS وNext.js وDrizzle ORM وPostgreSQL. ربطت النظام بإعلانات Meta عبر حساب Business، وبنيت بوتات واتساب لاستقبال العملاء وأتمتة المتابعة، مع تكامل Google Calendar. النظام يعمل في الإنتاج وعالج حوالي 1000 عميل محتمل.'
+                : 'At Bond Group I am building a CRM for real estate brokers and developers in a two-person team, with NestJS, Next.js, Drizzle ORM and PostgreSQL. I integrated Meta lead ads through the Business account, built WhatsApp bots for lead capture and follow-up automation, and added Google Calendar integration. The system is in production and has processed around 1,000 leads.'
+              }</p>
+              <div class="tl-tags">
+                {bond.technologies?.map((tech: string) => <span>{tech}</span>)}
+              </div>
+            </div>
+          </article>
+        )}
+
         {taager && (
           <article class="tl-entry reveal">
             <div class="tl-entry__meta">

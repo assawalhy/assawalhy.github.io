@@ -6,7 +6,8 @@ const author = {
     description: "Full Stack Software Engineer passionate about building web applications, competitive programming, and open source.",
     email: "muhammadsawalhy@gmail.com",
     github: "https://github.com/assawalhy",
-    linkedin: "https://linkedin.com/in/assawalhy"
+    linkedin: "https://linkedin.com/in/assawalhy",
+    x: "https://x.com/assawalhy"
   },
   honors: [
     {
