@@ -6,26 +6,26 @@ const projects = {
       image: "/images/projects/arabi-js.png",
       link: "https://github.com/arabi-js/arabi",
       tech: "JavaScript,PEG.js,Babel",
-      period: "10 أكتوبر 2020 - 13 مايو 2021",
+      period: "10 أكتوبر 2020 إلى 13 مايو 2021",
       story: "بدأ Arabi.js كسؤال عن اللغة والأدوات ومن يحق له أن يشعر أن البرمجة قريبة منه. استخدمت منظومة Babel لتحويل الكلمات المفتاحية والمعرفات العربية إلى جافاسكربت صالح للتنفيذ، فتحول المشروع من تجربة لغوية إلى أداة مطورين تعمل فعلا.",
       future_note: "المشروع هادئ علنا الآن، لكن هناك خطط تطوير معلقة. انتظر تحديثات أقوى لدعم اللغة وتجربة كتابة أكثر نضجا."
     },
     {
-      title: "رسم - Rasm",
+      title: "رسم (Rasm)",
       description: "آلة حاسبة بيانية لرسم الدوال الرياضية والأشكال الهندسية وتحريكها بلغة تعبيرات قوية.",
       image: "/images/projects/rasm.png",
       link: "https://github.com/assawalhy/rasm",
       tech: "JavaScript,HTML,Sass,PEG.js,Webpack",
-      period: "11 فبراير 2020 - 2 يناير 2021",
+      period: "11 فبراير 2020 إلى 2 يناير 2021",
       story: "كان Rasm محاولة مبكرة لجعل الأفكار الرياضية مرئية وقابلة للبرمجة. جمع بين رسم الدوال والأشكال الهندسية والتحريك ولغة تعبيرات مخصصة، لذلك كان تدريبا عمليا على التحليل اللغوي والرسم وتصميم الواجهة.",
       future_note: "ما زالت هناك خطط تطوير معلقة لـ Rasm. الفصل القادم يستهدف جعل لغة التعبيرات والمخرجات البصرية أكثر قوة."
     },
     {
       title: "Da7ee7 Bots",
-      description: "لوحة تحكم مبنية بـ Django لأتمتة إرسال الرسائل لعدة بوتات تليجرام لخدمة الطلاب.",
+      description: "لوحة تحكم مبنية بـ Django لأتمتة إرسال الرسائل لعدة بوتات تليجرام لخدمة الطلاب، مع أتمتة الإرسال المجدول في Make.com.",
       image: "/images/projects/da7ee7.jpg",
       link: "https://github.com/assawalhy/da7ee7-bot-dashboard",
-      tech: "Python,Django,JavaScript,Bootstrap"
+      tech: "Python,Django,JavaScript,Bootstrap,Make.com"
     },
     {
       title: "خريطة مشاريع TDCO التفاعلية",

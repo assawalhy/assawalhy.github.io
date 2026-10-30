@@ -15,7 +15,7 @@ I remember the first time I tried solving a problem on Codeforces. It was a simp
 
 ## Growing Through Challenges
 
-Over the next few years, I dedicated countless hours to practicing algorithms and data structures. From basic sorting and searching to advanced topics like segment trees, dynamic programming, and graph algorithms — each topic opened a new world of problem-solving possibilities.
+Over the next few years, I dedicated countless hours to practicing algorithms and data structures. From basic sorting and searching to advanced topics like segment trees, dynamic programming, and graph algorithms, and each topic opened a new world of problem-solving possibilities.
 
 ### Key Milestones
 
@@ -30,7 +30,7 @@ Over the next few years, I dedicated countless hours to practicing algorithms an
 - **Consistency beats intensity:** Solving 2-3 problems daily is better than 20 problems in one weekend
 - **Think before you code:** Spending time on paper before writing code saves hours of debugging
 - **Collaborate and learn:** Team practice exposes you to different thinking patterns
-- **Read editorial solutions:** Even for problems you've solved — there's always a more elegant approach
+- **Read editorial solutions:** Even for problems you have solved, there is always a more elegant approach
 
 ## What's Next
 

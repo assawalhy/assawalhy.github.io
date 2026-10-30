@@ -1,7 +1,7 @@
 const seminars = {
   seminars: [
     {
-      title: "Open Source & Digital Products (Lemona - Al-Tajmeea)",
+      title: "Open Source & Digital Products (Lemona, Al-Tajmeea)",
       date: "June 12, 2026",
       image: "/images/seminar-mortakaz.webp",
       link: "https://www.mortakaz.com/events/6a2a780ac100ecc87a9e8f8f",

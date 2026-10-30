@@ -1,0 +1,231 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{lmodern}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\ifdefined\pdfglyphtounicode
+  \input{glyphtounicode}
+\fi
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.65in}
+\addtolength{\textheight}{1.3in}
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-8pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\ifdefined\pdfgentounicode
+  \pdfgentounicode=1
+\fi
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-3pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-9pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-7pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\huge \scshape Muhammad Samir Assawalhy} \\ \vspace{1pt}
+    \small \faPhone\ +201096390741 \quad
+    \href{mailto:muhammadsawalhy@gmail.com}{\faEnvelope\ \underline{muhammadsawalhy@gmail.com}} \quad
+    \href{https://linkedin.com/in/assawalhy}{\faLinkedin\ \underline{linkedin.com/in/assawalhy}} \quad
+    \href{https://assawalhy.xyz}{\faGlobe\ \underline{assawalhy.xyz}}
+\end{center}
+
+
+%-----------SUMMARY-----------
+\section{Summary}
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      Automation and full stack engineer. Built and run the automation layer of a production real estate CRM for brokers and developers: Meta lead ads into the CRM, WhatsApp lead capture and follow up on n8n through the Meta WhatsApp Cloud API, OTP delivery, and viewings booked through Google Calendar, over roughly 1,000 leads. Looking to apply the same automation work to AI agents.
+    }}
+  \end{itemize}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Zagazig University}{Zagazig, Egypt}
+      {Bachelor of Electrical Engineering, Computer and Systems Engineering track}{Sep 2019 to Jul 2024}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Contract Software Engineer}{Sep 2026 to Present}
+      {Bond Group}{Riyadh, KSA (Remote)}
+      \resumeItemListStart
+        \resumeItem{Built WhatsApp bots on n8n for four companies, covering lead capture, follow up and OTP through the Meta WhatsApp Cloud API}
+        \resumeItem{Built the webhook lead intake API that Zapier and Make post to, with per key field lists, idempotency and duplicate detection, and imported around 1,000 Facebook and Instagram campaign leads in production}
+        \resumeItem{Connected viewing bookings to Google Calendar and automated the follow up around them}
+        \resumeItem{Worked on the CRM itself in a two person team, with NestJS services, a Next.js front end, Drizzle ORM and PostgreSQL}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Backend Intern}{Jun 2026 to Sep 2026}
+      {Taager}{Cairo, Egypt}
+      \resumeItemListStart
+        \resumeItem{Designed and maintained microservices communicating via Apache Pulsar, in Node.js and Spring Boot Kotlin across PostgreSQL and MongoDB}
+        \resumeItem{Applied Clean Architecture, DDD and CQRS, with roughly 80\% unit coverage using Testcontainers and MockK, and worked with CI/CD (ArgoCD), Kubernetes and Datadog}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Military Service (Conscription)}{2024 to 2026}
+      {Egyptian Armed Forces}{Egypt}
+
+    \resumeSubheading
+      {Frontend Engineer (part time during B.Eng)}{Aug 2021 to May 2024}
+      {SciCave}{Cairo, Egypt}
+      \resumeItemListStart
+        \resumeItem{Built web applications with TypeScript, React.js, Next.js and Tailwind CSS, tested with Cypress in CI/CD, and deployed with Docker and AWS EC2}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Da7ee7 Bots} $|$ \emph{Django, Make.com, Telegram Bot API} $|$ \href{https://github.com/assawalhy/da7ee7-bot-dashboard}{code}}{2021 to 2023}
+          \resumeItemListStart
+            \resumeItem{Dashboard that pushed scheduled messages to multiple Telegram bots for student services, with the recurring sends automated in Make.com, alongside 13+ bots run by the IT committee}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{TDCO Interactive Map} $|$ \emph{Leaflet, MapLibre GL, Vite, Vanilla JS} $|$ \href{https://tdco-interactive-map.pages.dev/}{live}}{Aug 2026}
+          \resumeItemListStart
+            \resumeItem{Bilingual (EN/AR, RTL) map of TDCO's construction projects across all 13 Saudi regions, with POI layers, search, shareable deep links and a data pipeline sourcing points of interest from OpenStreetMap}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+    \resumeSubHeadingListStart
+      \resumeItem{\textbf{ECPC} 1st place among university teams three years running; \textbf{ACPC Finalist} 2022, 2023, 2024; \textbf{NASA Space Apps} 3rd place and global nominee (2023)}
+      \resumeItem{\textbf{IEEEXtreme 17.0} (Oct 2023): top 15 teams out of 198 in Egypt}
+    \resumeSubHeadingListEnd
+
+
+%-----------EXTRACURRICULAR ACTIVITIES-----------
+\section{Extracurricular Activities}
+    \resumeSubHeadingListStart
+      \resumeSubheading
+        {IT Committee Head}{Nov 2021 to Jun 2023}
+        {ZagEng Team}{}
+        \resumeItemListStart
+            \resumeItem{Directed the committee to build 13+ Telegram bots for student services, with the recurring sends automated in Make.com and the Da7ee7 Django dashboard}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+
+    \begin{itemize}[leftmargin=0.15in, label={}]
+        \small{\item{
+        
+        \textbf{Languages}{: TypeScript, JavaScript, Python, Java, Kotlin, SQL; \textbf{Frontend}{: React.js, Next.js, Tailwind CSS}} \\
+        
+        \textbf{Backend}{: Node.js, NestJS, Spring Boot, REST APIs, WebSockets, Apache Pulsar, PostgreSQL, MongoDB} \\
+
+        \textbf{Automation}{: n8n, Zapier, Make.com, webhooks, Meta Graph API, WhatsApp Cloud API, Google Calendar API} \\
+        
+        \textbf{Tools}{: Git, Docker, Kubernetes, Linux, AWS, CI/CD (ArgoCD), Datadog; Clean Architecture, DDD, CQRS}
+        
+        }}
+    \end{itemize}
+
+
+%-------------------------------------------
+\end{document}

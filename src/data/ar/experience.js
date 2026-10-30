@@ -3,22 +3,25 @@ const experience = {
     {
       role: "مهندس برمجيات بعقد",
       company: "Bond Group",
-      period: "سبتمبر 2026 - الآن",
+      period: "سبتمبر 2026 إلى الآن",
       company_link: "https://adbond.sa",
       country: "الرياض، السعودية (عن بعد)",
       description: "بناء CRM للعقارات، وتحويله إلى منتج SaaS لوسطاء ومطوري العقارات.",
       responsibilities: [
         "بناء CRM لوسطاء ومطوري العقارات ضمن فريق من شخصين، باستخدام NestJS وNext.js وDrizzle ORM وPostgreSQL.",
         "دمج إعلانات Meta lead ads عبر حساب Business، واستيراد العملاء المحتملين من حملات فيسبوك وإنستغرام إلى الـ CRM.",
-        "بناء بوتات واتساب متصلة بالـ CRM لاستقبال العملاء وأتمتة المتابعة، مع تكامل Google Calendar وأتمتة سير العمل.",
+        "بناء بوتات واتساب على n8n لأربع شركات، متصلة بالـ CRM لاستقبال العملاء وأتمتة المتابعة، عبر Meta WhatsApp Cloud API.",
+        "بناء واجهة webhook لاستقبال العملاء المحتملين ترسل إليها Zapier وMake، مع قوائم حقول لكل مفتاح ومنع التكرار وكشف العملاء المكررين.",
+        "إرسال أكواد OTP عبر Meta WhatsApp Cloud API.",
+        "ربط حجوزات المعاينة بـ Google Calendar، وأتمتة خطوات المتابعة حولها.",
         "النظام يعمل في الإنتاج وعالج حوالي 1000 عميل محتمل."
       ],
-      technologies: ["TypeScript", "NestJS", "Next.js", "Drizzle ORM", "PostgreSQL", "Meta Lead Ads", "WhatsApp Bots", "Google Calendar"]
+      technologies: ["TypeScript", "NestJS", "Next.js", "Drizzle ORM", "PostgreSQL", "n8n", "Zapier", "Make.com", "Meta Lead Ads", "WhatsApp Cloud API", "WhatsApp Bots", "Google Calendar"]
     },
     {
       role: "متدرب تطوير الواجهات الخلفية",
       company: "Taager",
-      period: "يونيو 2026 - سبتمبر 2026",
+      period: "يونيو 2026 إلى سبتمبر 2026",
       company_link: "https://taager.com",
       country: "القاهرة، مصر",
       description: "تطبيق Clean Architecture في بيئة agile سريعة.",
@@ -35,7 +38,7 @@ const experience = {
     {
       role: "مهندس واجهات أمامية (دوام جزئي أثناء البكالوريوس)",
       company: "SciCave",
-      period: "أغسطس 2021 - مايو 2024",
+      period: "أغسطس 2021 إلى مايو 2024",
       company_link: "https://scicave.com",
       country: "القاهرة، مصر",
       description: "بناء تطبيقات ويب باستخدام تقنيات حديثة وإدارة النشر السحابي.",

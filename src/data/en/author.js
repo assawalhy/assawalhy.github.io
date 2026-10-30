@@ -18,13 +18,13 @@ const author = {
     },
     {
       institution: "NASA Space Apps in Ismailia",
-      title: "NASA Space Apps - 3rd Place & Global Nominee",
+      title: "NASA Space Apps, 3rd Place & Global Nominee",
       date: "November 2023",
       description: "Team Pyroguardians got 3rd place and became a global nominee."
     },
     {
       institution: "IEEE",
-      title: "IEEEXtreme 17.0 - Top 15 in Egypt",
+      title: "IEEEXtreme 17.0: Top 15 in Egypt",
       date: "October 2023",
       description: "Team was one of the top 15 teams out of 198 Egyptian teams."
     }
@@ -33,13 +33,13 @@ const author = {
     {
       role: "Mentor and Instructor",
       organization: "ICPC Community at Zagazig University",
-      period: "Mar 2022 – Aug 2024",
+      period: "Mar 2022 to Aug 2024",
       description: "Mentored teams, delivered weekly sessions on algorithms and C++ STL, and authored ICPC contest problems."
     },
     {
       role: "IT Committee Head",
       organization: "ZagEng Team",
-      period: "Nov 2021 - Jun 2023",
+      period: "Nov 2021 to Jun 2023",
       description: "Directed the committee to build 13+ telegram bots and automated tasks using Django and Make.com."
     }
   ]

@@ -1,5 +1,5 @@
 ---
-title: "Building Arabi.js — Arabizing JavaScript"
+title: "Building Arabi.js: Arabizing JavaScript"
 date: 2024-06-10T14:00:00+02:00
 draft: false
 tags: ["javascript", "open-source", "arabization"]
@@ -7,7 +7,7 @@ categories: ["projects"]
 description: "The story behind building Arabi.js, a tool that allows developers to write JavaScript using Arabic keywords."
 ---
 
-One of my most ambitious projects was Arabi.js — a tool that transforms JavaScript syntax to support Arabic keywords. The idea was simple but powerful: **what if you could write JavaScript in Arabic?**
+One of my most ambitious projects was Arabi.js, a tool that transforms JavaScript syntax to support Arabic keywords. The idea was simple but powerful: **what if you could write JavaScript in Arabic?**
 
 ## The Motivation
 
