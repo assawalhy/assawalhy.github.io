@@ -9,8 +9,8 @@ const lang = 'en';
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muhammad Samir Assawalhy</title>
-  <meta http-equiv="refresh" content={`0;url=/${lang}/`} />
-  <script>
+  <noscript><meta http-equiv="refresh" content={`0;url=/${lang}/`} /></noscript>
+  <script is:inline>
     (function() {
       var preferred = navigator.language || navigator.languages?.[0] || '';
       var lang = preferred.startsWith('ar') ? 'ar' : 'en';

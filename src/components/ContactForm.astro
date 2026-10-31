@@ -1,0 +1,123 @@
+---
+import type { Lang } from '../i18n';
+import site from '../data/site.js';
+
+export interface Props {
+  lang: Lang;
+  email: string;
+}
+
+const { lang, email } = Astro.props;
+const isAr = lang === 'ar';
+
+const copy = isAr
+  ? {
+      title: 'لنتحدث',
+      name: 'الاسم',
+      email: 'البريد الإلكتروني',
+      message: 'ما الذي تريد بناءه؟',
+      send: 'إرسال',
+      sending: 'جار الإرسال...',
+      ok: 'وصلت رسالتك. سأرد عليك قريبا.',
+      error: 'لم تصل الرسالة. راسلني مباشرة على',
+      fast: 'أرسلتها بسرعة كبيرة. انتظر ثانيتين ثم أعد المحاولة.',
+      check: 'انتظر حتى ينتهي التحقق، أو اضغط على مربع التحقق.',
+    }
+  : {
+      title: "let's talk",
+      name: 'Name',
+      email: 'Email',
+      message: 'What do you want to build?',
+      send: 'Send',
+      sending: 'Sending...',
+      ok: 'Message received. I will reply soon.',
+      error: 'The message did not go through. Email me at',
+      fast: 'That was too fast. Wait two seconds and send again.',
+      check: 'Wait for the check to finish, or click the verification box.',
+    };
+---
+
+<form
+  class="frame contact-form"
+  data-title={copy.title}
+  data-endpoint={site.contactFormEndpoint}
+  data-lang={lang}
+  data-msg-sending={copy.sending}
+  data-msg-ok={copy.ok}
+  data-msg-error={`${copy.error} ${email}`}
+  data-msg-fast={copy.fast}
+  data-msg-check={copy.check}
+  novalidate
+>
+  <div class="field">
+    <label for={`cf-name-${lang}`}>{copy.name}</label>
+    <input id={`cf-name-${lang}`} name="name" type="text" autocomplete="name" required maxlength="120" />
+  </div>
+  <div class="field">
+    <label for={`cf-email-${lang}`}>{copy.email}</label>
+    <input id={`cf-email-${lang}`} name="email" type="email" autocomplete="email" required maxlength="200" dir="ltr" />
+  </div>
+  <div class="field">
+    <label for={`cf-message-${lang}`}>{copy.message}</label>
+    <textarea id={`cf-message-${lang}`} name="message" rows="5" required maxlength="4000"></textarea>
+  </div>
+  <div class="hp-field" aria-hidden="true">
+    <label>Website<input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
+  </div>
+  {site.turnstileSiteKey && (
+    <div class="cf-turnstile" data-sitekey={site.turnstileSiteKey} data-appearance="interaction-only" data-theme="auto" data-language={lang} style="margin-bottom:12px"></div>
+  )}
+  <button type="submit" class="btn btn--primary">{copy.send}</button>
+  <p class="form-status" role="status" aria-live="polite"></p>
+</form>
+
+{site.turnstileSiteKey && (
+  <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+)}
+
+<script>
+  for (const form of document.querySelectorAll<HTMLFormElement>('form.contact-form')) {
+    const openedAt = Date.now();
+    const status = form.querySelector<HTMLElement>('.form-status')!;
+    const button = form.querySelector<HTMLButtonElement>('button[type=submit]')!;
+    const say = (state: string, text: string) => {
+      status.dataset.state = state;
+      status.textContent = text;
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      const data = new FormData(form);
+      if (data.get('website')) return;
+      if (Date.now() - openedAt < 2000) {
+        say('error', form.dataset.msgFast!);
+        return;
+      }
+      const widget = form.querySelector<HTMLElement>('.cf-turnstile');
+      if (widget && !data.get('cf-turnstile-response')) {
+        say('error', form.dataset.msgCheck!);
+        return;
+      }
+      const endpoint = form.dataset.endpoint;
+      if (!endpoint) {
+        say('error', form.dataset.msgError!);
+        return;
+      }
+      data.append('lang', form.dataset.lang!);
+      data.append('page', location.pathname);
+      button.disabled = true;
+      say('pending', form.dataset.msgSending!);
+      try {
+        await fetch(endpoint, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(data as any) });
+        form.reset();
+        say('ok', form.dataset.msgOk!);
+      } catch {
+        say('error', form.dataset.msgError!);
+      } finally {
+        if (widget) (window as any).turnstile?.reset(widget);
+        button.disabled = false;
+      }
+    });
+  }
+</script>

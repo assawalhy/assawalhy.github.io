@@ -1,6 +1,26 @@
 const projects = {
   projects: [
     {
+      title: "Diamond Base",
+      description: "Booking site for furnished stays in Riyadh, in Arabic and English, with live availability, booking holds, OTP sign-in, online payment and an admin dashboard.",
+      image: "/images/projects/diamond-base.jpg",
+      link: "https://diamondbase.sa",
+      tech: "React 19,Vite,Hono,PostgreSQL,MinIO,Moyasar,Playwright",
+      period: "Oct 2026",
+      story: "I rebuilt a static site as a React 19 app with a Hono API. Guests pick dates against live availability, the dates are held while they pay, and the booking is confirmed only after the server re-reads the payment from Moyasar and checks the booking id, amount and currency. Card fields stay inside Moyasar's iframe, so card data never reaches the app. OTP codes go out by SMS, with an email fallback, a 10-minute expiry and a limit of five attempts.",
+      future_note: "Staff manage units, images, prices, bookings and payment settings from the admin dashboard, without a code change."
+    },
+    {
+      title: "ajq",
+      description: "A jobs-queue daemon for AI coding agents. Agents submit builds and tests instead of running them, and the daemon runs them under concurrency, memory and CPU caps.",
+      image: "/images/projects/ajq.png",
+      link: "https://github.com/assawalhy/agents-jobs-queue",
+      tech: "Python,systemd,launchd,cgroups",
+      period: "Oct 2026",
+      story: "Parallel agents start builds, tests and typechecks at the same time, and the machine runs out of memory. ajq puts one daemon in front of them: a command is queued and gets a job id, the daemon starts it when a slot and enough RAM are free, and the agent reads the output when it finishes. It uses the Python standard library only, starts at boot through systemd or launchd, and ships a skill and hooks for Claude Code, OpenCode, Codex, Kiro and Pi.",
+      future_note: "It is covered by 328 tests and runs on Linux and macOS."
+    },
+    {
       title: "Arabi.js",
       description: "JavaScript Arabization based on Babel.js parser. Write JavaScript code using Arabic keywords and identifiers.",
       image: "/images/projects/arabi-js.png",
