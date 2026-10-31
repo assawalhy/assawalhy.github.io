@@ -16,7 +16,7 @@ const { seminars } = seminarsData;
     <section class="section" style="padding-top:24px">
       {seminars.map((seminar) => (
         <article class="frame" data-title={seminar.platform}>
-          {seminar.image && <img src={seminar.image} alt={seminar.title} loading="lazy" class="thumb" />}
+          {seminar.image && <a href={seminar.link} target="_blank" rel="noopener noreferrer" tabindex="-1" style="display:block"><img src={seminar.image} alt={seminar.title} loading="lazy" class="thumb" /></a>}
           <p class="faint mono" style="font-size:.75rem;margin-top:12px">{seminar.date}</p>
           <h2 class="seminar-title">
             <a href={seminar.link} class="link" target="_blank" rel="noopener noreferrer">{seminar.title}</a>

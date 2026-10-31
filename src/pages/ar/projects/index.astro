@@ -16,7 +16,7 @@ const { projects } = projectsData;
     <section class="section" style="padding-top:24px">
       {projects.map((project) => (
         <article class="frame" data-title={project.title}>
-          <img src={project.image} alt={project.title} loading="lazy" class="thumb" />
+          <a href={project.link} target="_blank" rel="noopener noreferrer" tabindex="-1" style="display:block"><img src={project.image} alt={project.title} loading="lazy" class="thumb" /></a>
           {project.period && (
             <p class="faint mono" style="font-size:.75rem;margin-top:12px">{project.period}</p>
           )}

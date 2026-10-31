@@ -5,10 +5,22 @@
 // 4. After editing this script later, use Deploy > Manage deployments > Edit > New version, so the /exec URL stays the same.
 // 5. Cloudflare Turnstile: in Project Settings > Script Properties add TURNSTILE_SECRET with the widget's secret key.
 //    When the property is set, a submission without a valid Turnstile token is dropped.
+// 6. Select "authorize" in the editor toolbar and click Run once, so the sheet, mail and UrlFetch scopes are granted.
+//    A web app deployment does not prompt for scopes added after the first authorization.
 
 const SHEET_NAME = 'Leads';
 const NOTIFY_EMAIL = Session.getEffectiveUser().getEmail();
 const LIMITS = { name: 120, email: 200, message: 4000 };
+
+function authorize() {
+  sheet_();
+  MailApp.getRemainingDailyQuota();
+  UrlFetchApp.fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', { method: 'post', muteHttpExceptions: true });
+}
+
+function doGet() {
+  return ok_();
+}
 
 function doPost(e) {
   const p = (e && e.parameter) || {};

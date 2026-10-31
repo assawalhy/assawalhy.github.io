@@ -17,7 +17,7 @@ const { seminars } = seminarsData;
       {seminars.map((seminar) => (
         <article class="frame" data-title={seminar.platform}>
           {seminar.image && (
-            <img src={seminar.image} alt={seminar.title} loading="lazy" class="thumb" />
+            <a href={seminar.link} target="_blank" rel="noopener noreferrer" tabindex="-1" style="display:block"><img src={seminar.image} alt={seminar.title} loading="lazy" class="thumb" /></a>
           )}
           <p class="faint mono" style="font-size:.75rem;margin-top:12px">{seminar.date}</p>
           <h2>
