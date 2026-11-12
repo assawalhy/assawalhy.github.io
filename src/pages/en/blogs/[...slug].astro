@@ -17,12 +17,12 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 const lang: Lang = 'en';
 const dir = 'ltr';
-const { title, date, tags, description } = post.data;
+const { title, date, tags, description, image, imageAlt } = post.data;
 const formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 const isoDate = date.toISOString().slice(0, 10);
 ---
 
-<BaseLayout {lang} {dir} {title} description={description}>
+<BaseLayout {lang} {dir} {title} description={description} {image} {imageAlt} type="article">
   <div class="shell">
     <header class="page-head">
       <p class="label post-date"><time datetime={isoDate}>{formattedDate}</time></p>
@@ -37,6 +37,12 @@ const isoDate = date.toISOString().slice(0, 10);
       )}
     </header>
 
+    {image && (
+      <figure class="frame post-cover" data-title="preview">
+        <img src={image} alt={imageAlt || title} width="1200" height="630" fetchpriority="high" />
+      </figure>
+    )}
+
     <article class="article-content prose-lite">
       <Content />
     </article>
@@ -48,6 +54,22 @@ const isoDate = date.toISOString().slice(0, 10);
 </BaseLayout>
 
 <style>
+  .post-cover {
+    margin: 32px 0 0;
+    padding: 24px 12px 12px;
+  }
+
+  .post-cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  :global(.dark) .post-cover img,
+  :global(.dark) .prose-lite img[src$='.svg'] {
+    filter: invert(1) hue-rotate(180deg);
+  }
+
   .post-date {
     color: var(--accent);
   }

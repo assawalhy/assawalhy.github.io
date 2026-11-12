@@ -5,6 +5,8 @@ draft: false
 tags: ["javascript", "open-source", "arabization"]
 categories: ["projects"]
 description: "The story behind building Arabi.js, a tool that allows developers to write JavaScript using Arabic keywords."
+image: "/images/blog/building-arabijs.png"
+imageAlt: "Hand-drawn card: Building Arabi.js, Arabic code through Babel to JavaScript"
 ---
 
 One of my most ambitious projects was Arabi.js, a tool that transforms JavaScript syntax to support Arabic keywords. The idea was simple but powerful: **what if you could write JavaScript in Arabic?**

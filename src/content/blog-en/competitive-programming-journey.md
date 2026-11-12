@@ -5,6 +5,8 @@ draft: true
 tags: ["competitive-programming", "ICPC", "algorithms"]
 categories: ["programming"]
 description: "How I started competitive programming, the challenges I faced, and the lessons I learned along the way to becoming an ACPC finalist."
+image: "/images/blog/competitive-programming-journey.png"
+imageAlt: "Hand-drawn card: My journey in competitive programming, problem, idea, code, accepted"
 ---
 
 Competitive programming has been one of the most defining experiences of my university years. It all started in my first year at Zagazig University when a senior student introduced me to the ICPC community.

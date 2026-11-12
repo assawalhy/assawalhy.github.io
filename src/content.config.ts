@@ -10,6 +10,8 @@ const blogEn = defineCollection({
     tags: z.array(z.string()).optional().default([]),
     categories: z.array(z.string()).optional().default([]),
     description: z.string().optional(),
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
   }),
 });
 
@@ -22,6 +24,8 @@ const blogAr = defineCollection({
     tags: z.array(z.string()).optional().default([]),
     categories: z.array(z.string()).optional().default([]),
     description: z.string().optional(),
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
   }),
 });
 
